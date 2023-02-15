@@ -1,0 +1,18 @@
+{
+  "name": "supabase-by-example",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/silentworks/supabase-by-example.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/silentworks/supabase-by-example/issues"
+	},
+	"homepage": "https://github.com/silentworks/supabase-by-example#readme",
+  "author": ""
+}
