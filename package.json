@@ -3,16 +3,25 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"**/*.{js,json,md,yml,ts,tsx,jsx,css,svelte}\"",
+    "prepare": "husky install"
   },
   "repository": {
-		"type": "git",
-		"url": "git+https://github.com/silentworks/supabase-by-example.git"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/silentworks/supabase-by-example/issues"
-	},
-	"homepage": "https://github.com/silentworks/supabase-by-example#readme",
-  "author": ""
+    "type": "git",
+    "url": "git+https://github.com/silentworks/supabase-by-example.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silentworks/supabase-by-example/issues"
+  },
+  "homepage": "https://github.com/silentworks/supabase-by-example#readme",
+  "author": "",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4"
+  },
+  "lint-staged": {
+    "*.{js,json,md,yml,ts,tsx,jsx,css,svelte}": "prettier --write"
+  }
 }
