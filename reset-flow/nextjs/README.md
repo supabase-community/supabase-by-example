@@ -1,35 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Reset Password and Change Email flow
+
+This is a NextJS/Supabase project showing how to do password reset and email change.
+
+This project makes use of:
+
+- [Zod](https://zod.dev/) Schema Validation library
+- [Supabase Auth Helpers NextJS](https://supabase.com/docs/guides/auth/auth-helpers/nextjs)
+- [DaisyUI](https://daisyui.com/)
+- [tailwindcss](https://tailwindcss.com/)
+- [Playwright](https://playwright.dev/) e2e testing
 
 ## Getting Started
 
-First, run the development server:
+You can get started with this locally by using the Supabase CLI. Make sure you have the CLI installed before continuing. You can find installation instructions [here](https://supabase.com/docs/guides/cli).
+
+Create a copy of this project using the commands below:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npx degit silentworks/supabase-by-example/reset-flow/nextjs project-name
+cd project-name
+npm install # or pnpm install or yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the command below to start your local Supabase docker instance
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npx supabase start
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Now create an `.env` file inside of the project root with the credentials you were given when you ran `supabase start`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Now we can start the project dev server:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run dev # or yarn dev or pnpm dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We can now navigate to the `/auth/signup` url to create an account.
 
 ## Deploy on Vercel
 
