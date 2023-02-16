@@ -15,12 +15,22 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 
 These templates are meant to be used as is via the [degit](https://github.com/Rich-Harris/degit) utility.
 
-### Signup with confirmation email + Password reset flow
+### Reset Password and Change Email flow
 
 Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
 
 ```bash
 npx degit silentworks/supabase-by-example/reset-flow/[framework] project-name
+cd project-name
+npm install # or pnpm install or yarn install
+```
+
+### Magic Link + Otp SignIn flow
+
+Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
+
+```bash
+npx degit silentworks/supabase-by-example/magic-link/[framework] project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
