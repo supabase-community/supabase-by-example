@@ -1,4 +1,3 @@
-import Head from "next/head";
 import AuthLayout from "@/components/AuthLayout";
 import { FormEvent, useState } from "react";
 import { AuthUserWithTokenSchema } from "@/lib/validationSchema";
@@ -66,9 +65,6 @@ export default function VerifyToken() {
 
   return (
     <>
-      <Head>
-        <title>Magic Link Flow</title>
-      </Head>
       <AuthLayout>
         <div className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6">
           {message ? (

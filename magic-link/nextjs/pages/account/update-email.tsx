@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { FormEvent, useState } from "react";
 import { UpdateEmailSchema } from "@/lib/validationSchema";
 import { z, ZodError } from "zod";
@@ -7,7 +6,10 @@ import InputErrorMessage from "@/components/InputErrorMessage";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Alert from "@/components/Alert";
 import AppLayout from "@/components/AppLayout";
-import { createServerSupabaseClient, User } from "@supabase/auth-helpers-nextjs";
+import {
+  createServerSupabaseClient,
+  User,
+} from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
 
 type FormData = z.infer<typeof UpdateEmailSchema>;
@@ -17,7 +19,10 @@ export default function UpdateEmail({ user }: { user: User }) {
   const [errors, setErrors] = useState<FormData>();
   const [message, setMessage] = useState("");
   const [formSuccess, setFormSuccess] = useState(false);
-  const [formData, setFormData] = useState<FormData>({ email: "", emailConfirm: "" });
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+    emailConfirm: "",
+  });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -40,27 +45,22 @@ export default function UpdateEmail({ user }: { user: User }) {
     }
 
     const { error } = await supabase.auth.updateUser({ email });
-    
+
     if (error) {
       setMessage(error.message);
       return;
     }
 
     // reset form
-    setFormData({ email: "", emailConfirm: ""});
+    setFormData({ email: "", emailConfirm: "" });
     setFormSuccess(true);
     setMessage("Your email was updated successfully.");
   };
 
   return (
     <>
-      <Head>
-        <title>Reset Flow</title>
-      </Head>
       <AppLayout>
-        <div
-          className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6"
-        >
+        <div className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6">
           {message ? (
             <Alert
               className={`${formSuccess ? "alert-info" : "alert-error"} mb-10`}
@@ -82,7 +82,9 @@ export default function UpdateEmail({ user }: { user: User }) {
                 name="email"
                 type="text"
                 value={formData?.email ?? ""}
-                onChange={(ev) => setFormData({ ...formData, email: ev.target.value })}
+                onChange={(ev) =>
+                  setFormData({ ...formData, email: ev.target.value })
+                }
                 className="input input-bordered"
               />
             </div>
@@ -98,7 +100,9 @@ export default function UpdateEmail({ user }: { user: User }) {
                 name="emailConfirm"
                 type="email"
                 value={formData.emailConfirm ?? ""}
-                onChange={(ev) => setFormData({ ...formData, emailConfirm: ev.target.value })}
+                onChange={(ev) =>
+                  setFormData({ ...formData, emailConfirm: ev.target.value })
+                }
                 className="input input-bordered"
               />
             </div>
@@ -106,7 +110,9 @@ export default function UpdateEmail({ user }: { user: User }) {
               <InputErrorMessage>{errors?.emailConfirm}</InputErrorMessage>
             ) : null}
             <div className="form-control mt-6">
-              <button className="btn btn-primary no-animation">Update Email</button>
+              <button className="btn btn-primary no-animation">
+                Update Email
+              </button>
             </div>
           </form>
         </div>
@@ -117,24 +123,24 @@ export default function UpdateEmail({ user }: { user: User }) {
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Supabase Client
-  const supabase = createServerSupabaseClient(ctx)
+  const supabase = createServerSupabaseClient(ctx);
   // Check if we have a session
   const {
     data: { session },
-  } = await supabase.auth.getSession()
+  } = await supabase.auth.getSession();
 
   if (!session)
     return {
       redirect: {
-        destination: '/auth/signin',
+        destination: "/auth/signin",
         permanent: false,
       },
-    }
+    };
 
   return {
     props: {
       initialSession: session,
       user: session.user,
     },
-  }
-}
+  };
+};

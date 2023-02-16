@@ -3,9 +3,9 @@ import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/publi
 
 export const supabase = createClient(
 	PUBLIC_SUPABASE_URL,
-	PUBLIC_SUPABASE_ANON_KEY
-	// {},
-	// {
-	// 	name: 'resetflow-auth-token'
-	// }
+	PUBLIC_SUPABASE_ANON_KEY,
+	{},
+	{
+		name: 'magiclink-auth-token'
+	}
 );

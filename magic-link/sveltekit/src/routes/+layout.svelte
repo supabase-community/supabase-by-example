@@ -17,7 +17,8 @@
 </script>
 
 <svelte:head>
-	<title>Magic Link Flow</title>
+	<title>Magic Link + Otp Flow</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </svelte:head>
 
 <slot />
