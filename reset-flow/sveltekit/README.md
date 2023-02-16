@@ -28,7 +28,7 @@ Run the command below to start your local Supabase docker instance
 npx supabase start
 ```
 
-Now create an `.env` file inside of the project root with the credentials you were given when you ran `supabase start`.
+Copy `.env.example` file and rename it `.env`. Now copy the credentials you were given when you ran `supabase start` into this file.
 
 Now we can start the project dev server:
 
