@@ -1,6 +1,6 @@
-# Magic Link flow
+# Magic Link and OTP flow
 
-These are Supabase projects showing how to do magic link login.
+These are Supabase projects showing how to do magic link and otp login.
 
 These projects make use of:
 
@@ -10,5 +10,5 @@ These projects make use of:
 - [tailwindcss](https://tailwindcss.com/)
 - [Playwright](https://playwright.dev/) e2e testing
 
-## Reset Password Flow in Server-side rendering (SSR) environment
+## Magic Link Otp SignIn Flow in Server-side rendering (SSR) environment
 ![Magic Link Otp SignIn Flow](Magic_Link_Otp_SignIn_Flow_SSR.excalidraw.png)

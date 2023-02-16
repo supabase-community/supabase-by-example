@@ -49,7 +49,7 @@ test.describe('User logs in using the otp flow', () => {
 		await page.goto('/');
 	});
 
-	// first magic link signin will perform a signup
+	// first magic link signin will perform a signup (unexpected behaviour)
 	// second signin will use magic link
 	test('signs in using the otp token', async ({ page }) => {
 		const email = generateRandomEmail(prefix);
