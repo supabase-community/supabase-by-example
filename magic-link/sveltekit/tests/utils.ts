@@ -2,7 +2,6 @@ import type { AuthUserSchema } from '$lib/validationSchema';
 import { expect, type Page } from '@playwright/test';
 import type { z } from 'zod';
 import { faker } from '@faker-js/faker';
-import { execSync } from 'child_process';
 import tcpPortUsed from 'tcp-port-used';
 
 type AuthUser = z.infer<typeof AuthUserSchema>;
@@ -16,8 +15,9 @@ export async function startSupabase() {
 	if (inUse) {
 		return;
 	}
-	console.warn('Supabase not detected - Starting it now');
-	execSync('npx supabase start', { stdio: 'ignore' });
+	console.warn(
+		'Supabase not detected on its default port 54321 - Please start using the Supabase CLI'
+	);
 }
 
 export async function signIn({ page, email, prefix }: Auth) {
