@@ -1,5 +1,5 @@
 {
-  "name": "magic-link-nextjs",
+  "name": "oauth-flow-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,7 @@
     "build": "next build",
     "build:css": "tailwindcss -m -i ./styles/tailwind.css -o styles/app.css",
     "start": "next start",
-    "lint": "next lint",
-    "test": "playwright test"
+    "lint": "next lint"
   },
   "dependencies": {
     "@next/font": "13.1.6",

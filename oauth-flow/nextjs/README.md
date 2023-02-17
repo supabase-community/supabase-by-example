@@ -1,6 +1,6 @@
-# Magic Link and OTP flow
+# OAuth Sign-in flow
 
-This is a NextJS/Supabase project showing how to do magic link and otp login.
+This is a NextJS/Supabase project showing how to do OAuth sign-in.
 
 This project makes use of:
 
@@ -8,7 +8,6 @@ This project makes use of:
 - [Supabase Auth Helpers NextJS](https://supabase.com/docs/guides/auth/auth-helpers/nextjs)
 - [DaisyUI](https://daisyui.com/)
 - [tailwindcss](https://tailwindcss.com/)
-- [Playwright](https://playwright.dev/) e2e testing
 
 ## Getting Started
 
@@ -17,10 +16,12 @@ You can get started with this locally by using the Supabase CLI. Make sure you h
 Create a copy of this project using the commands below:
 
 ```bash
-npx degit silentworks/supabase-by-example/magic-link/nextjs project-name
+npx degit silentworks/supabase-by-example/oauth-flow/nextjs project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
+
+Edit the `supabase/config.toml` file and enable the appropriate third party provider and fill in the credentials by following the [guide](https://supabase.com/docs/guides/auth/social-login). 
 
 Run the command below to start your local Supabase docker instance
 
