@@ -34,3 +34,13 @@ npx degit silentworks/supabase-by-example/magic-link/[framework] project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
+
+### OAuth Sign-in flow
+
+Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
+
+```bash
+npx degit silentworks/supabase-by-example/oauth-flow/[framework] project-name
+cd project-name
+npm install # or pnpm install or yarn install
+```
