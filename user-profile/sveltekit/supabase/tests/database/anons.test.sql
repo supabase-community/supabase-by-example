@@ -13,10 +13,10 @@ reset "request.jwt.claim.sub";
 select
   results_eq(
     $$
-    select count(*) from profiles;
+    select display_name from profiles where id in ('d0fc7e46-a8a5-4fd4-8ba7-af485013e6fa', '4c6ed4d5-746c-4124-9d3e-b32e5f769476');
     $$,
     $$
-    values(5::bigint);
+    values('Damon Larkin'::text), ('Adam Grimes'::text);
     $$,
     'anon can see all users'
   );
