@@ -1,7 +1,7 @@
 -- original source: https://gist.github.com/abn/779166b0c766ce67351c588489831852
 
 -- https://www.postgresql.org/docs/9.6/unaccent.html
-create extension if not exists "unaccent";
+create extension if not exists "unaccent" schema extensions;
 
 -- create the function in the public schema
 create or replace function public.slugify(
