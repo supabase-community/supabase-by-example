@@ -1,3 +1,5 @@
+create extension if not exists moddatetime schema extensions;
+
 -- create public profile table that anyone can view
 create table public.profiles (
     id uuid primary key references auth.users on delete cascade,
@@ -38,6 +40,16 @@ $$ language plpgsql security definer;
 create trigger on_auth_user_created
     after insert on auth.users
     for each row execute procedure public.handle_new_profile();
+
+-- use moddatetime function to update updated_at field when a table
+-- is about to be updated
+create trigger handle_updated_at 
+    before update on profiles
+    for each row execute procedure moddatetime(updated_at);
+
+create trigger handle_updated_at 
+    before update on profiles_info
+    for each row execute procedure moddatetime(updated_at);
 
 -- enable RLS (profiles table)
 alter table public.profiles enable row level security;
