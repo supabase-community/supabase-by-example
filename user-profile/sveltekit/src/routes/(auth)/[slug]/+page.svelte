@@ -61,17 +61,3 @@
 		</div>
 	</div>
 </div>
-<!-- <div
-	class="w-10/12 p-12 px-6 py-1 rounded-lg sm:w-8/12 md:w-6/12 lg:w-4/12 2xl:w-3/12 sm:px-10 sm:py-1"
->
-	<div class="card w-11/12 bg-base-100 shadow-xl">
-		<div class="card-body">
-			<h2 class="card-title">{data.profile?.display_name ?? 'No Profile found!'}</h2>
-			{#if data.profile?.display_name}
-				<p>{data.profile?.bio}</p>
-			{:else}
-				<p><a href="/auth/signup">Please create your own</a></p>
-			{/if}
-		</div>
-	</div>
-</div> -->
