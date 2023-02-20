@@ -9,8 +9,8 @@
 >
 	<h2 class="font-semibold text-4xl mb-4">Account</h2>
 	<p class="font-medium mb-10">
-		Hi {data.profile?.display_name ?? data.session?.user.email}, you can update your email or
-		password from here
+		Hi {data.profile?.display_name ?? data.session?.user.email}, you can update your profile, email
+		or password from here
 	</p>
 
 	<ul class="divide-y-2 divide-gray-200">
