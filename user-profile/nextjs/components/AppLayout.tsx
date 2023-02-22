@@ -12,13 +12,13 @@ export default function AppLayout({ children }: Props) {
         <div className="navbar border-b border-gray-300 py-8 px-4">
           <div className="flex-1">
             <h1 className="font-semibold">
-              <a href="/">User Profile</a>
+              <Link href="/">User Profile</Link>
             </h1>
           </div>
           <div className="flex-none space-x-10">
-            <a className="btn btn-outline no-animation" href="/account">
+            <Link className="btn btn-outline no-animation" href="/account">
               Account
-            </a>
+            </Link>
             <Link className="block" href="/auth/signout">
               Sign out
             </Link>
