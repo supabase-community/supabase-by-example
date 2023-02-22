@@ -16,6 +16,7 @@ import Alert from "@/components/Alert";
 import AppLayout from "@/components/AppLayout";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
+import { invalidateNextRouterCache } from "@/lib/invalidateNextRouterCache";
 
 type FormData = z.infer<typeof UpdateProfileSchema>;
 
@@ -86,6 +87,7 @@ export default function UpdateEmail({ user, profile }: UserInfo) {
 
     // reset form
     setFormSuccess(true);
+    invalidateNextRouterCache();
     setMessage("Your profile was updated successfully.");
   };
 
