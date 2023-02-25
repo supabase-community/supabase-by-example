@@ -1,6 +1,6 @@
-# Reset Password and Change Email flow
+# Magic Link and OTP flow
 
-This is a React/Supabase project showing how to do password reset and email change.
+This is a React/Supabase project showing how to do magic link and otp login.
 
 This project makes use of:
 
@@ -35,4 +35,4 @@ Now we can start the project dev server:
 npm run dev # or yarn dev or pnpm dev
 ```
 
-We can now navigate to the `/auth/signup` url to create an account.
+We can now navigate to the `/auth/signin` url to sign in.
