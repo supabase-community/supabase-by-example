@@ -6,6 +6,7 @@ These are example projects using supabase in various frameworks. This repo took 
 
 - nextjs
 - sveltekit
+- react
 
 ## Getting started
 
@@ -41,6 +42,16 @@ Replace `[framework]` with a framework from the supported list of [frameworks](#
 
 ```bash
 npx degit silentworks/supabase-by-example/oauth-flow/[framework] project-name
+cd project-name
+npm install # or pnpm install or yarn install
+```
+
+### User Profile
+
+Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
+
+```bash
+npx degit silentworks/supabase-by-example/user-profile/[framework] project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
