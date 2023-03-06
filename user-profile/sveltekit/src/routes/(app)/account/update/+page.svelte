@@ -32,8 +32,8 @@
 			};
 		}}
 	>
-		<div class="mb-4 md:flex md:justify-between">
-			<div>
+		<div class="mb-4 md:grid md:grid-cols-6 gap-4">
+			<div class="col-span-6 sm:col-span-3">
 				<div class="form-control">
 					<label for="first_name" class="label">First Name</label>
 					<input
@@ -48,7 +48,7 @@
 					<InputErrorMessage>{form?.errors?.firstName}</InputErrorMessage>
 				{/if}
 			</div>
-			<div>
+			<div class="col-span-6 sm:col-span-3">
 				<div class="form-control">
 					<label for="last_name" class="label">Last Name</label>
 					<input

@@ -1,23 +1,17 @@
 import { formatError, fault, success } from '$lib/utils';
 import { UpdateProfileSchema } from '$lib/validationSchema';
-import { getSupabase } from '@supabase/auth-helpers-sveltekit';
 import { fail } from '@sveltejs/kit';
 import { ZodError } from 'zod';
 import type { Actions, PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async (event) => {
-	const { session } = await getSupabase(event);
-
-	const { profile } = await event.parent();
+export const load: PageServerLoad = async ({ parent }) => {
+	const { session, profile } = await parent();
 
 	return { session, profile };
 };
 
 export const actions: Actions = {
-	default: async (event) => {
-		const { request } = event;
-		const { supabaseClient: supabase } = await getSupabase(event);
-
+	default: async ({ request, locals: { supabase } }) => {
 		const formData = await request.formData();
 		const displayName = formData.get('displayName') as string;
 		const bio = formData.get('bio') as string;

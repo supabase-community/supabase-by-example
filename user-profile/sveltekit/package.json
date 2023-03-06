@@ -18,7 +18,7 @@
 		"@faker-js/faker": "^7.6.0",
 		"@playwright/test": "^1.30.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.0.0",
+		"@sveltejs/kit": "^1.10.0",
 		"@types/tcp-port-used": "^1.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
@@ -33,9 +33,9 @@
 		"postgres": "^3.3.3",
 		"prettier": "^2.8.1",
 		"prettier-plugin-svelte": "^2.9.0",
-		"svelte": "^3.55.0",
-		"svelte-check": "^3.0.3",
-		"svelte-preprocess": "^5.0.0",
+		"svelte": "^3.55.1",
+		"svelte-check": "^3.0.4",
+		"svelte-preprocess": "^5.0.1",
 		"tailwindcss": "^3.2.4",
 		"tcp-port-used": "^1.0.2",
 		"tslib": "^2.4.1",
@@ -44,8 +44,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/auth-helpers-sveltekit": "^0.8.6",
-		"@supabase/supabase-js": "^2.2.1",
+		"@supabase/auth-helpers-sveltekit": "^0.9.0",
+		"@supabase/supabase-js": "^2.10.0",
 		"daisyui": "^2.41.0",
 		"zod": "^3.19.1"
 	}
