@@ -1,15 +1,11 @@
 import { fault, formatError, success } from '$lib/utils';
 import { AuthUserSchema } from '$lib/validationSchema';
-import { getSupabase } from '@supabase/auth-helpers-sveltekit';
 import { fail } from '@sveltejs/kit';
 import { ZodError } from 'zod';
 import type { Actions } from './$types';
 
 export const actions: Actions = {
-	default: async (event) => {
-		const { request, url } = event;
-		const { supabaseClient: supabase } = await getSupabase(event);
-
+	default: async ({ request, url, locals: { supabase } }) => {
 		const formData = await request.formData();
 		const email = formData.get('email') as string;
 
