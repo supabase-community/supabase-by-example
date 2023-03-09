@@ -42,7 +42,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/auth-helpers-sveltekit": "^0.8.6",
+		"@supabase/auth-helpers-sveltekit": "^0.9.0",
 		"@supabase/supabase-js": "^2.2.1",
 		"daisyui": "^2.41.0",
 		"zod": "^3.19.1"
