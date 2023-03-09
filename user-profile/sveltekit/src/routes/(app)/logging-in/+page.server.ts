@@ -1,8 +1,7 @@
-import { getSupabase } from '@supabase/auth-helpers-sveltekit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async (event) => {
-	const { session } = await getSupabase(event);
+export const load: PageServerLoad = async ({ parent }) => {
+	const { session } = await parent();
 
 	return { session };
 };

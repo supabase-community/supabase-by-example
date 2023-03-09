@@ -1,9 +1,7 @@
-import { getSupabase } from '@supabase/auth-helpers-sveltekit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async (event) => {
-	const { params, url } = event;
-	const { session, supabaseClient: supabase } = await getSupabase(event);
+export const load: PageServerLoad = async ({ params, url, locals: { supabase, getSession } }) => {
+	const session = await getSession();
 
 	const { data: profile } = await supabase
 		.from('profiles')

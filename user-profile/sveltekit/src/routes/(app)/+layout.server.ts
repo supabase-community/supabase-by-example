@@ -1,10 +1,8 @@
-import { getSupabase } from '@supabase/auth-helpers-sveltekit';
 import { redirect } from '@sveltejs/kit';
 import type { LayoutServerLoad } from './$types';
 
-export const load: LayoutServerLoad = async (event) => {
-	const { url } = event;
-	const { session, supabaseClient: supabase } = await getSupabase(event);
+export const load: LayoutServerLoad = async ({ url, locals: { supabase, getSession } }) => {
+	const session = await getSession();
 
 	const user = session?.user;
 
@@ -15,8 +13,12 @@ export const load: LayoutServerLoad = async (event) => {
 		.match({ id: user?.id })
 		.maybeSingle();
 
-	if (url.pathname !== '/account/update' && profile && profile.display_name == null) {
-		throw redirect(307, '/account/update');
+	// allow only update, update-password, update-email paths
+	const allowedPaths = ['/account/update', '/account/update-email', '/account/update-password'];
+	if (!allowedPaths.includes(url.pathname)) {
+		if (url.pathname !== '/account/update' && profile && profile.display_name == null) {
+			throw redirect(307, '/account/update');
+		}
 	}
 
 	return { session, profile, website: url.origin };
