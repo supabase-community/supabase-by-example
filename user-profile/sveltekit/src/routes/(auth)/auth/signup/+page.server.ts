@@ -24,7 +24,7 @@ export const actions: Actions = {
 			email,
 			password,
 			options: {
-				emailRedirectTo: `${url.origin}/` // necessary for our playwright test
+				emailRedirectTo: `${url.origin}/logging-in?next=/account/update`
 			}
 		});
 

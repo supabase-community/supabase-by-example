@@ -4,6 +4,10 @@ import type { LayoutServerLoad } from './$types';
 export const load: LayoutServerLoad = async ({ url, locals: { supabase, getSession } }) => {
 	const session = await getSession();
 
+	if (!session) {
+		throw redirect(307, '/auth/signin');
+	}
+
 	const user = session?.user;
 
 	// get profile and profile_info
@@ -21,5 +25,5 @@ export const load: LayoutServerLoad = async ({ url, locals: { supabase, getSessi
 		}
 	}
 
-	return { session, profile, website: url.origin };
+	return { profile, website: url.origin };
 };
