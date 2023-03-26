@@ -43,7 +43,7 @@
 	"type": "module",
 	"dependencies": {
 		"@supabase/auth-helpers-sveltekit": "^0.9.0",
-		"@supabase/supabase-js": "^2.10.0",
+		"@supabase/supabase-js": "^2.12.1",
 		"daisyui": "^2.51.3",
 		"zod": "^3.21.0"
 	}

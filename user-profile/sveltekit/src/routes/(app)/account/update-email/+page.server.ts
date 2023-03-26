@@ -2,12 +2,7 @@ import { formatError, fault, success } from '$lib/utils';
 import { UpdateEmailSchema } from '$lib/validationSchema';
 import { fail } from '@sveltejs/kit';
 import { ZodError } from 'zod';
-import type { Actions, PageServerLoad } from './$types';
-
-export const load: PageServerLoad = async ({ parent }) => {
-	const { session } = await parent();
-	return { session };
-};
+import type { Actions } from './$types';
 
 export const actions: Actions = {
 	default: async ({ request, locals: { supabase } }) => {
