@@ -1,13 +1,10 @@
-import { getSupabase } from '@supabase/auth-helpers-sveltekit';
 import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async (event) => {
-	const { session } = await getSupabase(event);
+export const load: PageServerLoad = async ({ locals: { getSession } }) => {
+	const session = await getSession();
 
 	if (!session) {
 		throw redirect(303, '/auth/signin');
 	}
-
-	return { session };
 };

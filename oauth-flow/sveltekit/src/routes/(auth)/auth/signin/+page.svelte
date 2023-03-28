@@ -1,12 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { supabase } from '$lib/db';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
+	$: ({ supabase } = data);
 
 	const signInWithGithub = async () => {
 		await supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
-				redirectTo: `${$page.url.origin}/logging-in?redirect=/`
+				redirectTo: `${$page.url.origin}/logging-in?next=/`
 			}
 		});
 	};
@@ -15,7 +19,7 @@
 		await supabase.auth.signInWithOAuth({
 			provider: 'slack',
 			options: {
-				redirectTo: `${$page.url.origin}/logging-in?redirect=/`
+				redirectTo: `${$page.url.origin}/logging-in?next=/`
 			}
 		});
 	};
@@ -24,7 +28,7 @@
 		await supabase.auth.signInWithOAuth({
 			provider: 'google',
 			options: {
-				redirectTo: `${$page.url.origin}/logging-in?redirect=/`
+				redirectTo: `${$page.url.origin}/logging-in?next=/`
 			}
 		});
 	};
@@ -34,7 +38,7 @@
 			provider: 'azure',
 			options: {
 				scopes: 'email',
-				redirectTo: `${$page.url.origin}/logging-in?redirect=/`
+				redirectTo: `${$page.url.origin}/logging-in?next=/`
 			}
 		});
 	};
