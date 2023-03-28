@@ -11,7 +11,7 @@ export const load: LayoutLoad = async ({ fetch, data, depends }) => {
 		event: { fetch },
 		serverSession: data.session,
 		cookieOptions: {
-			name: 'magiclink-auth-token',
+			name: 'oauth-auth-token',
 			sameSite: 'lax'
 		}
 	});

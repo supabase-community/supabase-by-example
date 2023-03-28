@@ -9,7 +9,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 		supabaseKey: PUBLIC_SUPABASE_ANON_KEY,
 		event,
 		cookieOptions: {
-			name: 'magiclink-auth-token'
+			name: 'magiclink-auth-token',
+			sameSite: 'lax'
 		}
 	});
 

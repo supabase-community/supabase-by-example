@@ -7,11 +7,9 @@
 
 	export let data: PageData;
 	$: {
-		const redirectTo = $page.url.searchParams.get('redirect');
-
 		// check if user has been set in session store then redirect
 		if (browser && data.session) {
-			goto(redirectTo ?? '/dashboard');
+			goto($page.url.searchParams.get('next') ?? '/');
 		}
 	}
 </script>
