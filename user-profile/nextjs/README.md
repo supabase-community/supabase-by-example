@@ -19,7 +19,7 @@ You can get started with this locally by using the Supabase CLI. Make sure you h
 Create a copy of this project using the commands below:
 
 ```bash
-npx degit silentworks/supabase-by-example/reset-flow/nextjs project-name
+npx degit supabase-community/supabase-by-example/reset-flow/nextjs project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```

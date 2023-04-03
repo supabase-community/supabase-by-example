@@ -16,7 +16,7 @@ You can get started with this locally by using the Supabase CLI. Make sure you h
 Create a copy of this project using the commands below:
 
 ```bash
-npx degit silentworks/supabase-by-example/magic-link/react project-name
+npx degit supabase-community/supabase-by-example/magic-link/react project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```

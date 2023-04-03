@@ -21,7 +21,7 @@ These templates are meant to be used as is via the [degit](https://github.com/Ri
 Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
 
 ```bash
-npx degit silentworks/supabase-by-example/reset-flow/[framework] project-name
+npx degit supabase-community/supabase-by-example/reset-flow/[framework] project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
@@ -31,7 +31,7 @@ npm install # or pnpm install or yarn install
 Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
 
 ```bash
-npx degit silentworks/supabase-by-example/magic-link/[framework] project-name
+npx degit supabase-community/supabase-by-example/magic-link/[framework] project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
@@ -41,7 +41,7 @@ npm install # or pnpm install or yarn install
 Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
 
 ```bash
-npx degit silentworks/supabase-by-example/oauth-flow/[framework] project-name
+npx degit supabase-community/supabase-by-example/oauth-flow/[framework] project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
@@ -51,7 +51,7 @@ npm install # or pnpm install or yarn install
 Replace `[framework]` with a framework from the supported list of [frameworks](#Frameworks)
 
 ```bash
-npx degit silentworks/supabase-by-example/user-profile/[framework] project-name
+npx degit supabase-community/supabase-by-example/user-profile/[framework] project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
