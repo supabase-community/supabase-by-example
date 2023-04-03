@@ -12,27 +12,27 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.8.0",
-    "daisyui": "^2.51.0",
+    "@supabase/supabase-js": "^2.14.0",
+    "daisyui": "^2.51.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1",
-    "zod": "^3.20.6"
+    "react-router-dom": "^6.10.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "@playwright/test": "^1.31.1",
-    "@types/node": "^18.14.1",
-    "@types/react": "^18.0.27",
+    "@playwright/test": "^1.32.1",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.10",
     "@types/tcp-port-used": "^1.0.1",
     "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.13",
-    "concurrently": "^7.6.0",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.0.1",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7",
+    "tailwindcss": "^3.3.1",
     "tcp-port-used": "^1.0.2",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1"
   }
 }
