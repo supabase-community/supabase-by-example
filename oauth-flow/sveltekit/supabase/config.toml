@@ -42,7 +42,7 @@ file_size_limit = "50MiB"
 # in emails.
 site_url = "http://localhost:5173"
 # A list of *exact* URLs that auth providers are permitted to redirect to post authentication.
-additional_redirect_urls = ["https://localhost:5173", "https://localhost:4173/**"]
+additional_redirect_urls = ["https://localhost:5173", "https://localhost:4173/**", "https://supabase-oauth-flow.tunnelto.dev/**"]
 # How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 seconds (one
 # week).
 jwt_expiry = 3600
@@ -70,21 +70,21 @@ redirect_uri = ""
 # or any other third-party OIDC providers.
 url = ""
 [auth.external.github]
-enabled = false
-client_id = ""
-secret = ""
+enabled = true
+client_id = "9e4405b2cf38b816d755"
+secret = "85c14c1fad4efbe7be0313b97b05478d8f116ff6"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.google]
-enabled = false
-client_id = ""
-secret = ""
+enabled = true
+client_id = "389707271408-p83i8pehi7o8tcls3gkaie0at9dpcphf.apps.googleusercontent.com"
+secret = "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"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.azure]
-enabled = false
-client_id = ""
-secret = ""
-url = ""
+enabled = true
+client_id = "7ab1c808-eb24-4ffe-9ca5-7f4b6c821e8b"
+secret = "xiS8Q~m_6Cf4xHFOeDHPa6P.xzh5q6DeGJdAgb6e"
+url = "https://login.microsoftonline.com/f242226b-5204-4bb2-86ff-69e42c87814c"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""

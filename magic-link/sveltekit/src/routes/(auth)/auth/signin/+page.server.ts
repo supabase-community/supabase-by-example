@@ -21,7 +21,7 @@ export const actions: Actions = {
 		const { error } = await supabase.auth.signInWithOtp({
 			email,
 			options: {
-				emailRedirectTo: `${url.origin}/logging-in?next=/`
+				emailRedirectTo: `${url.origin}/auth/callback`
 			}
 		});
 

@@ -4,51 +4,6 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 export default function SignIn() {
   const supabase = useSupabaseClient();
 
-  const signInWithGithub = async () => {
-		await supabase.auth.signInWithOAuth({
-			provider: 'github',
-			options: {
-				redirectTo: `${
-          new URL(location.href).origin
-        }/logging-in?redirect=/`
-			}
-		});
-	};
-
-	const signInWithSlack = async () => {
-		await supabase.auth.signInWithOAuth({
-			provider: 'slack',
-			options: {
-				redirectTo: `${
-          new URL(location.href).origin
-        }/logging-in?redirect=/`
-			}
-		});
-	};
-
-	const signInWithGoogle = async () => {
-		await supabase.auth.signInWithOAuth({
-			provider: 'google',
-			options: {
-				redirectTo: `${
-          new URL(location.href).origin
-        }/logging-in?redirect=/`
-			}
-		});
-	};
-
-	const signInWithAzure = async () => {
-		await supabase.auth.signInWithOAuth({
-			provider: 'azure',
-			options: {
-				scopes: 'email',
-				redirectTo: `${
-          new URL(location.href).origin
-        }/logging-in?redirect=/`
-			}
-		});
-	};
-
   return (
     <>
       <AuthLayout>
@@ -56,9 +11,9 @@ export default function SignIn() {
           <h2 className="font-semibold text-4xl mb-4">Sign in</h2>
           <p className="font-medium mb-4">Hi, Welcome back</p>
           <div className="space-y-2">
-            <button
+            <a
               className="btn btn-outline border-gray-200 hover:bg-transparent hover:text-gray-500 gap-2 w-full normal-case no-animation"
-              onClick={signInWithGithub}
+              href="/api/auth/github"
             >
               <svg
                 width="24"
@@ -74,37 +29,50 @@ export default function SignIn() {
                 />
               </svg>
               Sign in with GitHub
-            </button>
-            <button
+            </a>
+            <a
               className="btn btn-outline border-gray-200 hover:bg-transparent hover:text-gray-500 gap-2 w-full normal-case no-animation"
-              onClick={signInWithSlack}
+              href="/api/auth/slack"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"
-                ><path
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 48 48"
+              >
+                <path
                   fill="black"
                   fillOpacity="0.6"
                   d="M33 8a4 4 0 0 0-8 0v11a4 4 0 0 0 8 0V8zM43 19a4 4 0 0 1-4 4h-4v-4a4 4 0 0 1 8 0z"
-                /><path
+                />
+                <path
                   fill="black"
                   fillOpacity="0.6"
                   d="M8 14a4 4 0 0 0 0 8h11a4 4 0 0 0 0-8H8zM19 4a4 4 0 0 1 4 4v4h-4a4 4 0 0 1 0-8z"
-                /><path
+                />
+                <path
                   fill="black"
                   fillOpacity="0.6"
                   d="M14 39.006C14 41.212 15.791 43 18 43s4-1.788 4-3.994V28.022c0-2.206-1.791-3.994-4-3.994s-4 1.788-4 3.994v10.984zM4 28.022a3.997 3.997 0 0 1 4-3.994h4v3.994c0 2.206-1.791 3.994-4 3.994s-4-1.788-4-3.994z"
-                /><path
+                />
+                <path
                   fill="black"
                   fillOpacity="0.6"
                   d="M39 33a4 4 0 0 0 0-8H28a4 4 0 0 0 0 8h11zM28 43a4 4 0 0 1-4-4v-4h4a4 4 0 0 1 0 8z"
-                /></svg
-              >
+                />
+              </svg>
               Sign in with Slack
-            </button>
-            <button
+            </a>
+            <a
               className="btn btn-outline border-gray-200 hover:bg-transparent hover:text-gray-500 gap-2 w-full normal-case no-animation"
-              onClick={signInWithGoogle}
+              href="/api/auth/google"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24" height="24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                width="24"
+                height="24"
+              >
                 <path
                   fill="black"
                   fillOpacity="0.3"
@@ -127,12 +95,17 @@ export default function SignIn() {
                 />
               </svg>
               Sign in with Google
-            </button>
-            <button
+            </a>
+            <a
               className="btn btn-outline border-gray-200 hover:bg-transparent hover:text-gray-500 gap-2 w-full normal-case no-animation"
-              onClick={signInWithAzure}
+              href="/api/auth/azure"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24" height="24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                width="24"
+                height="24"
+              >
                 <linearGradient
                   id="k8yl7~hDat~FaoWq8WjN6a"
                   x1="-1254.397"
@@ -190,7 +163,7 @@ export default function SignIn() {
                 />
               </svg>
               Sign in with Azure
-            </button>
+            </a>
           </div>
         </div>
       </AuthLayout>
