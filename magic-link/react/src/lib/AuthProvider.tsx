@@ -34,6 +34,7 @@ export const AuthProvider = ({ children, supabaseClient }: Props) => {
   const [error, setError] = useState<AuthError>();
 
   useEffect(() => {
+    let ignore = false;
     setIsLoading(true);
     const getUser = async () => {
       const { data, error } = await supabaseClient.auth.getSession();
@@ -42,17 +43,22 @@ export const AuthProvider = ({ children, supabaseClient }: Props) => {
       if (error) {
         setError(error);
       }
-      setUser(currentUser ?? null);
-      setIsLoading(false);
+      if (!ignore) {
+        setUser(currentUser ?? null);
+      }
     };
     getUser();
     const {
       data: { subscription },
     } = supabaseClient.auth.onAuthStateChange((_, session) => {
-      setUser(session?.user ?? null);
+      if (!ignore) {
+        setUser(session?.user ?? null);
+      }
+      setIsLoading(false);
     });
 
     return () => {
+      ignore = true;
       subscription.unsubscribe();
     };
   }, []);

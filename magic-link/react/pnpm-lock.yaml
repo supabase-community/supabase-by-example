@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@supabase/supabase-js':
-    specifier: ^2.20.0
-    version: 2.20.0
+    specifier: ^2.21.0
+    version: 2.21.0
   daisyui:
     specifier: ^2.51.5
     version: 2.51.5(autoprefixer@10.4.14)(postcss@8.4.21)
@@ -577,8 +577,8 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/gotrue-js@2.22.1:
-    resolution: {integrity: sha512-hwM8dFzGqqU/xqv9coxIpujSU++bs2Vw6EiZZSeUdGZkeKQ07YXFlNG56aQKkwnpHRIQjHSgZ2bAoVX1n9Owbw==}
+  /@supabase/gotrue-js@2.23.0:
+    resolution: {integrity: sha512-N6o+MMGsPDbdiz0R0Oy9GlgefYFjJJvoBduR16s8c1H3yG2jp6jq+pMEP18P1bg7uk2DljEjyBnVN7Wj7SJ2Zw==}
     dependencies:
       cross-fetch: 3.1.5
     transitivePeerDependencies:
@@ -611,11 +611,11 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/supabase-js@2.20.0:
-    resolution: {integrity: sha512-6sNX4WEaVBbmOS1K2U3PcpAhp0FcjVo1FRSEoj4N+NZ6DIokX+yut8IBhF176pg5kFCdFIL2wyNhf3SltREmWw==}
+  /@supabase/supabase-js@2.21.0:
+    resolution: {integrity: sha512-FW3ZzBoc4orSgfX0dXrmJoXAcI/hiekmqXTkN64vjtUF2Urp3UjyAf71UTtV9Jl6ejHoe3K++e0+Rg9zKUJh5w==}
     dependencies:
       '@supabase/functions-js': 2.1.0
-      '@supabase/gotrue-js': 2.22.1
+      '@supabase/gotrue-js': 2.23.0
       '@supabase/postgrest-js': 1.5.0
       '@supabase/realtime-js': 2.7.2
       '@supabase/storage-js': 2.5.1
