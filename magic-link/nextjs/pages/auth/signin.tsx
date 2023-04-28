@@ -47,7 +47,7 @@ export default function SignIn() {
       options: {
         emailRedirectTo: `${
           new URL(location.href).origin
-        }/logging-in?redirect=/`,
+        }/api/auth/callback`,
       },
     });
 

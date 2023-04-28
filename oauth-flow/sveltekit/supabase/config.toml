@@ -71,20 +71,20 @@ redirect_uri = ""
 url = ""
 [auth.external.github]
 enabled = true
-client_id = "9e4405b2cf38b816d755"
-secret = "85c14c1fad4efbe7be0313b97b05478d8f116ff6"
+client_id = "env(GITHUB_CLIENT_ID)"
+secret = "env(GITHUB_SECRET)"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.google]
 enabled = true
-client_id = "389707271408-p83i8pehi7o8tcls3gkaie0at9dpcphf.apps.googleusercontent.com"
-secret = "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"
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_SECRET)"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.azure]
 enabled = true
-client_id = "7ab1c808-eb24-4ffe-9ca5-7f4b6c821e8b"
-secret = "xiS8Q~m_6Cf4xHFOeDHPa6P.xzh5q6DeGJdAgb6e"
+client_id = "env(AZURE_CLIENT_ID)"
+secret = "env(AZURE_SECRET)"
 url = "https://login.microsoftonline.com/f242226b-5204-4bb2-86ff-69e42c87814c"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""

@@ -22,7 +22,7 @@ export const actions: Actions = {
 		const { error } = await supabase.auth.verifyOtp({
 			email,
 			token,
-			type: 'magiclink'
+			type: 'email'
 		});
 
 		if (error) {
