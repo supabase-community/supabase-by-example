@@ -1,27 +1,18 @@
 import Head from "next/head";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
-import AppLayout from "@/components/AppLayout";
-import {
-  getProfile,
-  getProperty,
-  Profile,
-  ProfileInfo,
-  UserInfo,
-} from "@/lib/utils";
+import { getProfile, Profile, ProfileInfo } from "@/lib/utils";
 import absoluteUrl from "next-absolute-url";
+import get from "just-safe-get";
 
-export default function VanityPage({
+const VanityPage = ({
   profile,
   website,
 }: {
   profile: Profile;
   website: string;
-}) {
-  const profileInfo = getProperty(
-    profile as Profile,
-    "profiles_info"
-  ) as ProfileInfo;
+}) => {
+  const profileInfo = get(profile as Profile, "profiles_info.0") as ProfileInfo;
 
   return (
     <>
@@ -105,7 +96,9 @@ export default function VanityPage({
       </div>
     </>
   );
-}
+};
+
+export default VanityPage;
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Supabase Client

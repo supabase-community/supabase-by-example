@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { getProperty, type Profile, type ProfileInfo } from '$lib/utils';
+	import type { Profile, ProfileInfo } from '$lib/utils';
 	import type { PageData } from './$types';
+	import get from 'just-safe-get';
 
 	export let data: PageData;
 
-	const profileInfo = getProperty(data.profile as Profile, 'profiles_info') as ProfileInfo;
+	const profileInfo = get(data.profile as Profile, 'profiles_info.0') as ProfileInfo;
 </script>
 
 <div class="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">

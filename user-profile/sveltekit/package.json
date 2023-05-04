@@ -47,6 +47,7 @@
 		"@supabase/auth-helpers-sveltekit": "0.10.0-next.0",
 		"@supabase/supabase-js": "^2.20.0",
 		"daisyui": "^2.51.5",
+		"just-safe-get": "^4.2.0",
 		"zod": "^3.21.4"
 	}
 }

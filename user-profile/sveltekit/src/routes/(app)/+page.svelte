@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { getProperty, type Profile, type ProfileInfo } from '$lib/utils';
+	import type { Profile, ProfileInfo } from '$lib/utils';
+	import get from 'just-safe-get';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const profileInfo = getProperty(data.profile as Profile, 'profiles_info') as ProfileInfo;
+	const profileInfo = get(data.profile as Profile, 'profiles_info.0') as ProfileInfo;
 </script>
 
 <div class="card w-4/12 bg-base-100 shadow-xl">
@@ -15,7 +16,7 @@
 				Name: {profileInfo?.first_name}
 				{profileInfo?.last_name}
 			</p>
-			<p>Display Name: {data.profile.display_name}</p>
+			<p>Display Name: {data.profile?.display_name}</p>
 			<p>Dob: {profileInfo?.dob}</p>
 			<p>Location: {profileInfo?.profile_location}</p>
 			<h3 class="text-lg font-semibold mt-2">Bio</h3>

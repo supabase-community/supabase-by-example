@@ -46,9 +46,7 @@ export default function SignUp() {
       email,
       password,
       options: {
-        emailRedirectTo: `${
-          new URL(location.href).origin
-        }/logging-in?redirect=/`,
+        emailRedirectTo: `${new URL(location.href).origin}/api/auth/callback`,
       },
     });
 

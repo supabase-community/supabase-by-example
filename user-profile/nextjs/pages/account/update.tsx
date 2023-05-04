@@ -5,7 +5,6 @@ import { z, ZodError } from "zod";
 import {
   formatError,
   getProfile,
-  getProperty,
   Profile,
   ProfileInfo,
   UserInfo,
@@ -17,6 +16,7 @@ import AppLayout from "@/components/AppLayout";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
 import { invalidateNextRouterCache } from "@/lib/invalidateNextRouterCache";
+import get from "just-safe-get";
 
 type FormData = z.infer<typeof UpdateProfileSchema>;
 
@@ -26,18 +26,15 @@ export default function UpdateEmail({ user, profile }: UserInfo) {
   const [message, setMessage] = useState("");
   const [formSuccess, setFormSuccess] = useState(false);
 
-  const profileInfo = getProperty(
-    profile as Profile,
-    "profiles_info"
-  ) as ProfileInfo;
+  const profileInfo = get(profile as Profile, "profiles_info.0") as ProfileInfo;
 
   const [formData, setFormData] = useState<FormData>({
-    displayName: profile.display_name ?? "",
-    bio: profile.bio ?? "",
-    firstName: profileInfo.first_name ?? "",
-    lastName: profileInfo.last_name ?? "",
-    dob: profileInfo.dob ?? "",
-    profileLocation: profileInfo.profile_location ?? "",
+    displayName: profile?.display_name ?? "",
+    bio: profile?.bio ?? "",
+    firstName: profileInfo?.first_name ?? "",
+    lastName: profileInfo?.last_name ?? "",
+    dob: profileInfo?.dob ?? "",
+    profileLocation: profileInfo?.profile_location ?? "",
   });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -106,12 +103,12 @@ export default function UpdateEmail({ user, profile }: UserInfo) {
             </Alert>
           ) : null}
           <h2 className="font-semibold text-4xl mb-4">
-            {profile.display_name
+            {profile?.display_name
               ? "Update Profile"
               : "Please complete your profile"}
           </h2>
           <p className="font-medium mb-4">
-            Hi {profile.display_name ?? user.email}, Enter your user profile
+            Hi {profile?.display_name ?? user.email}, Enter your user profile
             info below
           </p>
           <form onSubmit={handleSubmit}>

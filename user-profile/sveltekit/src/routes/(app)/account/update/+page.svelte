@@ -3,12 +3,13 @@
 	import { enhance } from '$app/forms';
 	import Alert from '$lib/Alert.svelte';
 	import InputErrorMessage from '$lib/InputErrorMessage.svelte';
-	import { getProperty, type Profile, type ProfileInfo } from '$lib/utils';
+	import type { Profile, ProfileInfo } from '$lib/utils';
+	import get from 'just-safe-get';
 
 	export let data: PageData;
 	export let form: ActionData;
 
-	const profileInfo = getProperty(data.profile as Profile, 'profiles_info') as ProfileInfo;
+	const profileInfo = get(data.profile as Profile, 'profiles_info.0') as ProfileInfo;
 </script>
 
 <div

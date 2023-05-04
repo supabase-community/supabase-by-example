@@ -2,24 +2,12 @@ import Head from "next/head";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
 import AppLayout from "@/components/AppLayout";
-import {
-  getProfile,
-  getProperty,
-  Profile,
-  ProfileInfo,
-  UserInfo,
-} from "@/lib/utils";
+import { getProfile, Profile, ProfileInfo, UserInfo } from "@/lib/utils";
 import absoluteUrl from "next-absolute-url";
+import get from "just-safe-get";
 
-export default function Home({
-  user,
-  profile,
-  website,
-}: UserInfo & { website: string }) {
-  const profileInfo = getProperty(
-    profile as Profile,
-    "profiles_info"
-  ) as ProfileInfo;
+const Home = ({ user, profile, website }: UserInfo & { website: string }) => {
+  const profileInfo = get(profile as Profile, "profiles_info.0") as ProfileInfo;
 
   return (
     <>
@@ -61,7 +49,9 @@ export default function Home({
       </AppLayout>
     </>
   );
-}
+};
+
+export default Home;
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Supabase Client
@@ -75,7 +65,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   return {
     props: {
       initialSession: session,
-      user: session?.user,
+      user: session?.user ?? null,
       profile,
       website: origin,
     },

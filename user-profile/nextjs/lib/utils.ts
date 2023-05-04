@@ -42,24 +42,6 @@ export interface UserInfo {
   profile: Profile;
 }
 
-export const getProperty = <T extends object, K extends keyof T>(
-  obj: T,
-  key: K
-) => {
-  if (obj && obj?.[key]) {
-    // here we guard to make sure its not null
-    if (!Array.isArray(obj[key])) {
-      // here we guard to make sure it isn't an array
-      return obj[key];
-    }
-  }
-  return null;
-};
-
-export function waitload(sec: number) {
-  return new Promise((resolve) => setTimeout(resolve, sec * 1000));
-}
-
 export async function getProfile(
   supabase: SupabaseClient,
   slug: string | undefined = undefined

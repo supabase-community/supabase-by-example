@@ -24,7 +24,7 @@ export const actions: Actions = {
 			email,
 			password,
 			options: {
-				emailRedirectTo: `${url.origin}/logging-in?next=/`
+				emailRedirectTo: `${url.origin}/auth/callback`
 			}
 		});
 
