@@ -1,7 +1,6 @@
 import { classAppearance } from "@/lib/utils";
 import { useSupabaseClient } from "@/lib/AuthProvider";
 import { MagicLink } from "@supabase/auth-ui-react";
-import { en } from "@supabase/auth-ui-shared";
 
 export default function SignIn() {
   const supabase = useSupabaseClient();
@@ -15,7 +14,7 @@ export default function SignIn() {
           <MagicLink
             supabaseClient={supabase}
             appearance={classAppearance}
-            i18n={{ ...en }} // need to make this default without passing in lang
+            providers={[]}
           />
         </div>
       </div>

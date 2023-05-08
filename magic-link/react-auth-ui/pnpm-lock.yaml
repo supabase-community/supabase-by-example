@@ -2,11 +2,11 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@supabase/auth-ui-react':
-    specifier: ^0.3.6
-    version: 0.3.6(@supabase/supabase-js@2.21.0)
+    specifier: ^0.4.1
+    version: 0.4.1(@supabase/supabase-js@2.21.0)
   '@supabase/auth-ui-shared':
-    specifier: ^0.1.4
-    version: 0.1.4(@supabase/supabase-js@2.21.0)
+    specifier: ^0.1.5
+    version: 0.1.5(@supabase/supabase-js@2.21.0)
   '@supabase/supabase-js':
     specifier: ^2.21.0
     version: 2.21.0
@@ -580,23 +580,23 @@ packages:
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
     dev: false
 
-  /@supabase/auth-ui-react@0.3.6(@supabase/supabase-js@2.21.0):
-    resolution: {integrity: sha512-xQjLV5VmuZdy0bTLmO2i7vvDzKV5q66W1ZKhgSl867AMuMK47uEiyBCOynce5wjCatwUwk4n6IL+z67dhc+kpw==}
+  /@supabase/auth-ui-react@0.4.1(@supabase/supabase-js@2.21.0):
+    resolution: {integrity: sha512-Ynhnnghc4onVX492Hq86H6WF06YSWKfX4VmVl2O1t5GNmXbu4ZOG5CxioRsq3clU5QRihM4Bt5m55vXZqENyaQ==}
     peerDependencies:
-      '@supabase/supabase-js': ^2.8.0
+      '@supabase/supabase-js': ^2.21.0
     dependencies:
       '@stitches/core': 1.2.8
-      '@supabase/auth-ui-shared': 0.1.4(@supabase/supabase-js@2.21.0)
+      '@supabase/auth-ui-shared': 0.1.5(@supabase/supabase-js@2.21.0)
       '@supabase/supabase-js': 2.21.0
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@supabase/auth-ui-shared@0.1.4(@supabase/supabase-js@2.21.0):
-    resolution: {integrity: sha512-1kSo4JNLyVsTdHhuHSG0WQ7VotKbeMmoQjzIwbE/heALm9xlDu+0AgTPCx1uae1umOALa1CCQuEdfvz6P02RLA==}
+  /@supabase/auth-ui-shared@0.1.5(@supabase/supabase-js@2.21.0):
+    resolution: {integrity: sha512-fsF3LXvkLCGDFNGbhleaeP7s17YqN9H9y0ERxdv//zLng3UhC0GMi1JDAovqeh9yw5P/VIhTig6qa7cuPzHZ9g==}
     peerDependencies:
-      '@supabase/supabase-js': ^2.8.0
+      '@supabase/supabase-js': ^2.21.0
     dependencies:
       '@supabase/supabase-js': 2.21.0
     dev: false
