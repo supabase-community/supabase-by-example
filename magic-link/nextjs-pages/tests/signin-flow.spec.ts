@@ -18,7 +18,7 @@ test.describe('Sign in user', () => {
 		await signIn({ page, email, prefix });
 		const newTab = await context.newPage();
 		await newTab.goto('/');
-		const logoutButton = newTab.getByRole('link', { name: 'Sign out' });
+		const logoutButton = newTab.getByRole('button', { name: 'Sign out' });
 		await expect(logoutButton).toHaveCount(1);
 	});
 
