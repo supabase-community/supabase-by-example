@@ -3,13 +3,9 @@
 	import { enhance } from '$app/forms';
 	import Alert from '$lib/Alert.svelte';
 	import InputErrorMessage from '$lib/InputErrorMessage.svelte';
-	import type { Profile, ProfileInfo } from '$lib/utils';
-	import get from 'just-safe-get';
 
 	export let data: PageData;
 	export let form: ActionData;
-
-	const profileInfo = get(data.profile as Profile, 'profiles_info.0') as ProfileInfo;
 </script>
 
 <div
@@ -41,7 +37,7 @@
 						id="first_name"
 						name="firstName"
 						type="text"
-						value={form?.firstName ?? profileInfo?.first_name}
+						value={form?.firstName ?? data.profileInfo?.first_name ?? ''}
 						class="input input-bordered"
 					/>
 				</div>
@@ -56,7 +52,7 @@
 						id="last_name"
 						name="lastName"
 						type="text"
-						value={form?.lastName ?? profileInfo?.last_name}
+						value={form?.lastName ?? data.profileInfo?.last_name ?? ''}
 						class="input input-bordered"
 					/>
 				</div>
@@ -71,7 +67,7 @@
 				id="display_name"
 				name="displayName"
 				type="text"
-				value={form?.displayName ?? data.profile?.display_name}
+				value={form?.displayName ?? data.profile?.display_name ?? ''}
 				class="input input-bordered"
 			/>
 		</div>
@@ -93,7 +89,7 @@
 				id="dob"
 				name="dob"
 				type="text"
-				value={form?.dob ?? profileInfo?.dob}
+				value={form?.dob ?? data.profileInfo?.dob ?? ''}
 				class="input input-bordered"
 			/>
 		</div>
@@ -106,7 +102,7 @@
 				id="profile_location"
 				name="profileLocation"
 				type="text"
-				value={form?.profileLocation ?? profileInfo?.profile_location}
+				value={form?.profileLocation ?? data.profileInfo?.profile_location ?? ''}
 				class="input input-bordered"
 			/>
 		</div>

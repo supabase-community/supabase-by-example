@@ -1,5 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import type { LayoutServerLoad } from './$types';
+import get from 'just-safe-get';
+import type { Profile, ProfileInfo } from '$lib/utils';
 
 export const load: LayoutServerLoad = async ({ url, locals: { supabase, getSession } }) => {
 	const session = await getSession();
@@ -25,5 +27,7 @@ export const load: LayoutServerLoad = async ({ url, locals: { supabase, getSessi
 		}
 	}
 
-	return { profile, website: url.origin };
+	const profileInfo = get(profile as Profile, 'profiles_info') as ProfileInfo;
+
+	return { profile, profileInfo, website: url.origin };
 };

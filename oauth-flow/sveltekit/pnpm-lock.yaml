@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@supabase/auth-helpers-sveltekit':
-    specifier: 0.10.0-next.3
-    version: 0.10.0-next.3(@supabase/supabase-js@2.19.0)(@sveltejs/kit@1.15.4)
+    specifier: ^0.10.0
+    version: 0.10.0(@supabase/supabase-js@2.19.0)(@sveltejs/kit@1.15.4)
   '@supabase/supabase-js':
     specifier: ^2.19.0
     version: 2.19.0
@@ -363,8 +363,8 @@ packages:
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
 
-  /@supabase/auth-helpers-shared@0.4.0-next.3(@supabase/supabase-js@2.19.0):
-    resolution: {integrity: sha512-ELvEbYPJdTlwvqXsHkRN8ADcRe1IQxHt+UNqxbV2SKIpJCieQ4BMsgUVI/w+e3gMQHRbydk0PaJpOa9aStzMyg==}
+  /@supabase/auth-helpers-shared@0.4.0(@supabase/supabase-js@2.19.0):
+    resolution: {integrity: sha512-5wlCGb4HZ46W2fg8tdi22ZU1GAIOe3YxXrTgvAjWVapNFN+PiH5cFIbz51ZgZRK1TokRZ01pB1GEFy4e+NZE+A==}
     peerDependencies:
       '@supabase/supabase-js': ^2.19.0
     dependencies:
@@ -372,13 +372,13 @@ packages:
       jose: 4.14.3
     dev: false
 
-  /@supabase/auth-helpers-sveltekit@0.10.0-next.3(@supabase/supabase-js@2.19.0)(@sveltejs/kit@1.15.4):
-    resolution: {integrity: sha512-8uWx18r8vOt/i7QQi7rar+Zn8aWy4lKe1uJgPhYJrXdNih5eWt/tMp6UGOavNajig6YSYMaSn+X50+bLRbGWQg==}
+  /@supabase/auth-helpers-sveltekit@0.10.0(@supabase/supabase-js@2.19.0)(@sveltejs/kit@1.15.4):
+    resolution: {integrity: sha512-Pq0BiN1ms+8Q7yxoRufhoayvI9YoDYTkIJ8EXy3MJeeI3n2meNUF8x6h/CRsWQ79pLmulESzIiJTkSVVGn/YlQ==}
     peerDependencies:
       '@supabase/supabase-js': ^2.19.0
       '@sveltejs/kit': ^1.15.4
     dependencies:
-      '@supabase/auth-helpers-shared': 0.4.0-next.3(@supabase/supabase-js@2.19.0)
+      '@supabase/auth-helpers-shared': 0.4.0(@supabase/supabase-js@2.19.0)
       '@supabase/supabase-js': 2.19.0
       '@sveltejs/kit': 1.15.4(svelte@3.58.0)(vite@4.2.1)
     dev: false

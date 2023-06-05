@@ -42,7 +42,7 @@ export async function signUp({ page, email, password, prefix }: Auth) {
 	await checkConfirmationEmail(page, prefix);
 	const welcomeNotice = page.getByRole('heading', { name: `Please complete your profile` });
 	await expect(welcomeNotice).toHaveText(`Please complete your profile`);
-	const logoutButton = page.getByRole('link', { name: 'Sign out' });
+	const logoutButton = page.getByRole('button', { name: 'Sign out' });
 	await expect(logoutButton).toHaveCount(1);
 }
 
@@ -50,12 +50,12 @@ export async function signIn({ page, email, password }: Auth) {
 	await page.getByLabel('Email').fill(email);
 	await page.getByLabel('Password').fill(password);
 	await page.keyboard.press('Enter');
-	const logoutButton = page.getByRole('link', { name: 'Sign out' });
+	const logoutButton = page.getByRole('button', { name: 'Sign out' });
 	await expect(logoutButton).toHaveText('Sign out');
 }
 
 export async function signOut(page: Page) {
-	const logoutButton = page.getByRole('link', { name: 'Sign out' });
+	const logoutButton = page.getByRole('button', { name: 'Sign out' });
 	await expect(logoutButton).toHaveText('Sign out');
 	await logoutButton.click();
 	await page.waitForURL('/auth/signin');
@@ -78,7 +78,7 @@ export async function forgotPassword({ page, email, prefix }: ForgotPassword) {
 		})
 		.first();
 	await expect(updatePasswordTitle).toHaveCount(1);
-	const logoutButton = page.getByRole('link', { name: 'Sign out' });
+	const logoutButton = page.getByRole('button', { name: 'Sign out' });
 	await expect(logoutButton).toHaveText('Sign out');
 }
 
