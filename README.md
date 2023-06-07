@@ -5,8 +5,10 @@ These are example projects using supabase in various frameworks. This repo took 
 ## Frameworks
 
 - nextjs
+- nextjs-pages
 - sveltekit
 - react
+- react-auth-ui (only in magic-link example at the moment)
 
 ## Getting started
 
