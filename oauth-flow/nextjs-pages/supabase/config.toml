@@ -1,6 +1,6 @@
 # A string used to distinguish different Supabase projects on the same host. Defaults to the working
 # directory name when running `supabase init`.
-project_id = "oauth-flow-nextjs"
+project_id = "oauth-flow-nextjs-pages"
 
 [api]
 # Port to use for the API URL.
@@ -71,21 +71,21 @@ redirect_uri = ""
 # or any other third-party OIDC providers.
 url = ""
 [auth.external.github]
-enabled = false
-client_id = ""
-secret = ""
+enabled = true
+client_id = "env(GITHUB_CLIENT_ID)"
+secret = "env(GITHUB_SECRET)"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.google]
-enabled = false
-client_id = ""
-secret = ""
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_SECRET)"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.azure]
-enabled = false
-client_id = ""
-secret = ""
-url = ""
+enabled = true
+client_id = "env(AZURE_CLIENT_ID)"
+secret = "env(AZURE_SECRET)"
+url = "https://login.microsoftonline.com/f242226b-5204-4bb2-86ff-69e42c87814c"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
