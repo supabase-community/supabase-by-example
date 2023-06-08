@@ -1,12 +1,11 @@
 import { createServerClient } from "@/lib/supabase-server";
-import EmailForm from "./email-form";
 
-export default async function UpdateEmail() {
+export default async function Home() {
   const supabase = createServerClient();
 
   const {
     data: { session },
   } = await supabase.auth.getSession();
 
-  return <EmailForm user={session?.user} />;
+  return <h1>Welcome {session?.user.email}</h1>;
 }

@@ -1,37 +1,36 @@
 "use client";
 import { formatError } from "@/lib/utils";
-import { UpdateEmailSchema } from "@/lib/validationSchema";
+import { AuthUserSchema } from "@/lib/validationSchema";
+import { AuthApiError } from "@supabase/supabase-js";
 import { useState, FormEvent } from "react";
 import { z, ZodError } from "zod";
 import Alert from "@/components/Alert";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import { useSupabase } from "@/app/supabase-provider";
-import { User } from "@supabase/auth-helpers-nextjs";
 
-type FormData = z.infer<typeof UpdateEmailSchema>;
+type FormData = z.infer<typeof AuthUserSchema>;
 
-export default function EmailForm({ user }: { user: User | undefined }) {
+export default function OAuthForm() {
   const { supabase } = useSupabase();
   const [errors, setErrors] = useState<FormData>();
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState<string>("");
   const [formSuccess, setFormSuccess] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     email: "",
-    emailConfirm: "",
   });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // reset all states
     setFormSuccess(false);
     setErrors(undefined);
     setMessage("");
 
     const email = formData.email;
-    const emailConfirm = formData.emailConfirm;
 
     try {
-      UpdateEmailSchema.parse({ email, emailConfirm });
+      AuthUserSchema.parse({ email });
     } catch (err) {
       if (err instanceof ZodError) {
         const errs = formatError(err) as FormData;
@@ -40,17 +39,28 @@ export default function EmailForm({ user }: { user: User | undefined }) {
       }
     }
 
-    const { error } = await supabase.auth.updateUser({ email });
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: {
+        emailRedirectTo: `${new URL(location.href).origin}/auth/callback`,
+      },
+    });
 
     if (error) {
+      if (error instanceof AuthApiError && error.status === 400) {
+        setMessage("Invalid credentials.");
+        return;
+      }
       setMessage(error.message);
       return;
     }
 
     // reset form
-    setFormData({ email: "", emailConfirm: "" });
+    setFormData({ email: "" });
     setFormSuccess(true);
-    setMessage("Your email was updated successfully.");
+    setMessage(
+      "Please check your email for a magic link to log into the website."
+    );
   };
   return (
     <div className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6">
@@ -61,10 +71,8 @@ export default function EmailForm({ user }: { user: User | undefined }) {
           {message}
         </Alert>
       ) : null}
-      <h2 className="font-semibold text-4xl mb-4">Update Email</h2>
-      <p className="font-medium mb-4">
-        Hi {user?.email}, Enter your new email below and confirm it
-      </p>
+      <h2 className="font-semibold text-4xl mb-4">Sign in</h2>
+      <p className="font-medium mb-4">Hi, Welcome back</p>
       <form onSubmit={handleSubmit}>
         <div className="form-control">
           <label htmlFor="email" className="label">
@@ -84,26 +92,8 @@ export default function EmailForm({ user }: { user: User | undefined }) {
         {errors?.email ? (
           <InputErrorMessage>{errors?.email}</InputErrorMessage>
         ) : null}
-        <div className="form-control">
-          <label htmlFor="emailConfirm" className="label">
-            Confirm Email
-          </label>
-          <input
-            id="emailConfirm"
-            name="emailConfirm"
-            type="email"
-            value={formData.emailConfirm ?? ""}
-            onChange={(ev) =>
-              setFormData({ ...formData, emailConfirm: ev.target.value })
-            }
-            className="input input-bordered"
-          />
-        </div>
-        {errors?.emailConfirm ? (
-          <InputErrorMessage>{errors?.emailConfirm}</InputErrorMessage>
-        ) : null}
         <div className="form-control mt-6">
-          <button className="btn btn-primary no-animation">Update Email</button>
+          <button className="btn btn-primary no-animation">Sign in</button>
         </div>
       </form>
     </div>
