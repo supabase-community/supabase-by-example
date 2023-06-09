@@ -1,7 +1,5 @@
 // src/routes/+layout.server.ts
-import type { LayoutServerLoad } from './$types';
-
-export const load: LayoutServerLoad = async ({ locals: { getSession } }) => {
+export const load = async ({ locals: { getSession } }) => {
 	return {
 		session: await getSession()
 	};

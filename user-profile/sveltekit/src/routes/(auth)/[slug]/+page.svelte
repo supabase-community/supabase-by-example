@@ -1,10 +1,5 @@
 <script lang="ts">
-	import { getProperty, type Profile, type ProfileInfo } from '$lib/utils';
-	import type { PageData } from './$types';
-
-	export let data: PageData;
-
-	const profileInfo = getProperty(data.profile as Profile, 'profiles_info') as ProfileInfo;
+	export let data;
 </script>
 
 <div class="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">
@@ -26,15 +21,15 @@
 						>'{data.profile?.display_name}'</span
 					>,
 				</p>
-				{#if profileInfo}
+				{#if data.profileInfo}
 					<p>
 						&nbsp;&nbsp;&nbsp;&nbsp;first_name: <span class="text-yellow-300"
-							>'{profileInfo.first_name}'</span
+							>'{data.profileInfo.first_name}'</span
 						>,
 					</p>
 					<p>
 						&nbsp;&nbsp;&nbsp;&nbsp;last_name: <span class="text-yellow-300"
-							>'{profileInfo.last_name}'</span
+							>'{data.profileInfo.last_name}'</span
 						>,
 					</p>
 				{/if}

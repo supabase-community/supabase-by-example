@@ -1,4 +1,6 @@
+import get from 'just-safe-get';
 import type { PageServerLoad } from './$types';
+import type { Profile, ProfileInfo } from '$lib/utils';
 
 export const load: PageServerLoad = async ({ params, url, locals: { supabase, getSession } }) => {
 	const session = await getSession();
@@ -9,5 +11,7 @@ export const load: PageServerLoad = async ({ params, url, locals: { supabase, ge
 		.match({ slug: params.slug })
 		.single();
 
-	return { session, profile, website: url.origin };
+	const profileInfo = get(profile as Profile, 'profiles_info') as ProfileInfo;
+
+	return { session, profile, profileInfo, website: url.origin };
 };

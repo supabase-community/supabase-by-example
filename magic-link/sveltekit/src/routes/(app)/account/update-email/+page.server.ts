@@ -2,9 +2,8 @@ import { formatError, fault, success } from '$lib/utils';
 import { UpdateEmailSchema } from '$lib/validationSchema';
 import { fail } from '@sveltejs/kit';
 import { ZodError } from 'zod';
-import type { Actions } from './$types';
 
-export const actions: Actions = {
+export const actions = {
 	default: async ({ request, locals: { supabase } }) => {
 		const formData = await request.formData();
 		const email = formData.get('email') as string;

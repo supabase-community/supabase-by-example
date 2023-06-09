@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { ActionData, PageData } from './$types';
 	import InputErrorMessage from '$lib/InputErrorMessage.svelte';
 	import Alert from '$lib/Alert.svelte';
 	import { enhance } from '$app/forms';
 
-	export let data: PageData;
-	export let form: ActionData;
+	export let data;
+	export let form;
 </script>
 
 <div

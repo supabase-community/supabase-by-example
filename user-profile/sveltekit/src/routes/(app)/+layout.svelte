@@ -12,7 +12,9 @@
 			</div>
 			<div class="flex-none space-x-10">
 				<a class="btn btn-outline" href="/account">Account</a>
-				<a class="block" href="/auth/signout">Sign out</a>
+				<form action="/auth/signout" method="post">
+					<button class="btn btn-ghost">Sign out</button>
+				</form>
 			</div>
 		</div>
 		<div class="grid place-items-center my-20 mx-2">

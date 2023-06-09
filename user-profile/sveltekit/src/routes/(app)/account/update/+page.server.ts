@@ -46,7 +46,7 @@ export const actions: Actions = {
 				displayNameError = 'Display Name is already in use, please choose a different name';
 				errorMessage = '';
 			}
-			console.log({ error });
+
 			return fail(
 				500,
 				fault(errorMessage, {

@@ -1,6 +1,5 @@
+import { Session, SupabaseClient, User } from "@supabase/supabase-js";
 import type { ZodError } from "zod";
-import { Database } from "./schema";
-import { Session, SupabaseClient, User } from "@supabase/auth-helpers-nextjs";
 
 export const formatError = (zodError: ZodError) => {
   const formattedErrors: Record<string, string> = {};
@@ -31,33 +30,13 @@ export const fault = <T extends Record<string, unknown> | undefined>(
   ...data,
 });
 
-export type ProfileInfo = Database["public"]["Tables"]["profiles_info"]["Row"];
-export type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
-export type Profile = Profiles & {
-  profiles_info: ProfileInfo | ProfileInfo[] | null;
-};
-
-export interface UserInfo {
-  user: User;
-  profile: Profile;
-}
-
-export const getProperty = <T extends object, K extends keyof T>(
-  obj: T,
-  key: K
-) => {
-  if (obj && obj?.[key]) {
-    // here we guard to make sure its not null
-    if (!Array.isArray(obj[key])) {
-      // here we guard to make sure it isn't an array
-      return obj[key];
-    }
-  }
-  return null;
-};
-
 export function waitload(sec: number) {
   return new Promise((resolve) => setTimeout(resolve, sec * 1000));
+}
+
+export interface UserInfo {
+  user: User | undefined;
+  profile: Profile;
 }
 
 export async function getProfile(

@@ -1,0 +1,40 @@
+{
+  "name": "magic-link-react",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:css\" \"vite\"",
+    "dev:css": "tailwindcss -w -i ./src/tailwind.css -o src/app.css",
+    "build": "npm run build:css && tsc && vite build",
+    "build:css": "tailwindcss -m -i ./src/tailwind.css -o src/app.css",
+    "preview": "vite preview",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@supabase/auth-ui-react": "^0.4.1",
+    "@supabase/auth-ui-shared": "^0.1.5",
+    "@supabase/supabase-js": "^2.21.0",
+    "daisyui": "^2.51.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@playwright/test": "^1.32.1",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.10",
+    "@types/tcp-port-used": "^1.0.1",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.0.1",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "tcp-port-used": "^1.0.2",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1"
+  }
+}

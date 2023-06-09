@@ -42,7 +42,7 @@ file_size_limit = "50MiB"
 # in emails.
 site_url = "http://localhost:3000"
 # A list of *exact* URLs that auth providers are permitted to redirect to post authentication.
-additional_redirect_urls = ["https://localhost:3000", "https://localhost:3000/logging-in"]
+additional_redirect_urls = ["https://localhost:3000", "https://supabase-oauth-flow.tunnelto.dev/**"]
 # How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 seconds (one
 # week).
 jwt_expiry = 3600
@@ -71,21 +71,31 @@ redirect_uri = ""
 # or any other third-party OIDC providers.
 url = ""
 [auth.external.github]
-enabled = false
-client_id = ""
-secret = ""
+enabled = true
+client_id = "env(GITHUB_CLIENT_ID)"
+secret = "env(GITHUB_SECRET)"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.google]
-enabled = false
-client_id = ""
-secret = ""
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_SECRET)"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
 [auth.external.azure]
-enabled = false
-client_id = ""
-secret = ""
-url = ""
+enabled = true
+client_id = "env(AZURE_CLIENT_ID)"
+secret = "env(AZURE_SECRET)"
+url = "https://login.microsoftonline.com/f242226b-5204-4bb2-86ff-69e42c87814c"
 # Overrides the default auth redirectUrl.
 redirect_uri = ""
+
+[analytics]
+enabled = false
+port = 54327
+vector_port = 54328
+# Setup BigQuery project to enable log viewer on local development stack.
+# See: https://logflare.app/guides/bigquery-setup
+gcp_project_id = ""
+gcp_project_number = ""
+gcp_jwt_path = "supabase/gcloud.json"

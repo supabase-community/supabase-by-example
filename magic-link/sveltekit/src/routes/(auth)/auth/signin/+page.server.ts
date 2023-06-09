@@ -2,9 +2,8 @@ import { fault, formatError, success } from '$lib/utils';
 import { AuthUserSchema } from '$lib/validationSchema';
 import { fail } from '@sveltejs/kit';
 import { ZodError } from 'zod';
-import type { Actions } from './$types';
 
-export const actions: Actions = {
+export const actions = {
 	default: async ({ request, url, locals: { supabase } }) => {
 		const formData = await request.formData();
 		const email = formData.get('email') as string;
@@ -21,7 +20,7 @@ export const actions: Actions = {
 		const { error } = await supabase.auth.signInWithOtp({
 			email,
 			options: {
-				emailRedirectTo: `${url.origin}/logging-in?next=/`
+				emailRedirectTo: `${url.origin}/auth/callback`
 			}
 		});
 

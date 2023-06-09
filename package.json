@@ -18,8 +18,8 @@
   "author": "",
   "devDependencies": {
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
-    "prettier": "^2.8.7"
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
   },
   "lint-staged": {
     "*.{js,json,md,yml,ts,tsx,jsx,css,svelte}": "prettier --write"
