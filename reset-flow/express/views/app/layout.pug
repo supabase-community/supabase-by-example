@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  main(data-theme='winter')
+    .flex.flex-col.h-screen
+      .navbar.border-b.border-gray-300.py-8.px-4
+        .flex-1
+          h1.font-semibold
+            a(href='/') Reset Flow
+        .flex-none.space-x-10
+          a(class='btn btn-outline no-animation' href='/account') Account
+          form(class='block' action='/auth/signout' method='post')
+            button(type='submit') Sign out
+      .grid.place-items-center.my-20.mx-2
+        block main
