@@ -12,27 +12,27 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.21.0",
+    "@supabase/supabase-js": "^2.25.0",
     "daisyui": "^2.51.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0",
+    "react-router-dom": "^6.12.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0",
-    "@playwright/test": "^1.32.1",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.10",
+    "@faker-js/faker": "^8.0.2",
+    "@playwright/test": "^1.35.0",
+    "@types/node": "^20.3.1",
+    "@types/react": "^18.2.12",
+    "@types/react-dom": "^18.2.5",
     "@types/tcp-port-used": "^1.0.1",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
-    "concurrently": "^8.0.1",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.1",
+    "concurrently": "^8.2.0",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
     "tcp-port-used": "^1.0.2",
-    "typescript": "^5.0.3",
-    "vite": "^4.2.1"
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9"
   }
 }

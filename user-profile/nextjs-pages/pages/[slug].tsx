@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { createPagesServerClient } from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
 import { getProfile, Profile, ProfileInfo } from "@/lib/utils";
 import absoluteUrl from "next-absolute-url";
@@ -102,7 +102,7 @@ export default VanityPage;
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Supabase Client
-  const supabase = createServerSupabaseClient(ctx);
+  const supabase = createPagesServerClient(ctx);
 
   const { origin } = absoluteUrl(ctx.req);
   const slug = ctx?.params?.slug as string;

@@ -6,13 +6,13 @@ import { useState, FormEvent } from "react";
 import { z, ZodError } from "zod";
 import Alert from "@/components/Alert";
 import InputErrorMessage from "@/components/InputErrorMessage";
-import { useSupabase } from "@/app/supabase-provider";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 
 type FormData = z.infer<typeof AuthUserWithTokenSchema>;
 
 export default function VerifyTokenForm() {
-  const { supabase } = useSupabase();
+  const supabase = createClientComponentClient();
   const router = useRouter();
   const [errors, setErrors] = useState<FormData>();
   const [message, setMessage] = useState<string>("");

@@ -40,7 +40,7 @@ test.describe("Password reset flow", () => {
       })
       .first();
     await expect(successNotice).toHaveCount(1);
-    await page.getByRole("link", { name: "Sign out" }).click();
+    await page.getByRole("button", { name: "Sign out" }).click();
     await signIn({ page, email, password: newPassword });
   });
 });

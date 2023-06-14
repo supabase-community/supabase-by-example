@@ -22,7 +22,7 @@ export const generateRandomDob = () => {
 };
 
 export const generateRandomLocation = () =>
-  `${faker.address.city()}, ${faker.address.country()}`;
+  `${faker.location.city()}, ${faker.location.country()}`;
 
 export async function startSupabase() {
   const inUse = await tcpPortUsed.check(54321);

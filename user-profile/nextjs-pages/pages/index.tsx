@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { createPagesServerClient } from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
 import AppLayout from "@/components/AppLayout";
 import { getProfile, Profile, ProfileInfo, UserInfo } from "@/lib/utils";
@@ -55,7 +55,7 @@ export default Home;
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Supabase Client
-  const supabase = createServerSupabaseClient(ctx);
+  const supabase = createPagesServerClient(ctx);
 
   const { origin } = absoluteUrl(ctx.req);
 

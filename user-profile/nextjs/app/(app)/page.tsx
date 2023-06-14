@@ -2,6 +2,8 @@ import { createServerClient } from "@/lib/supabase-server";
 import { getProfile } from "@/lib/utils";
 import get from "just-safe-get";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const supabase = createServerClient();
 
