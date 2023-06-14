@@ -19,11 +19,11 @@ test.describe('User profile', () => {
 	});
 
 	test('new user can signup and create profile', async ({ page }) => {
-		const displayName = faker.name.fullName();
+		const displayName = faker.person.fullName();
 		const email = generateRandomEmail(prefix);
 		await signUp({ page, email, password, prefix });
-		await page.getByLabel('First Name').fill(faker.name.firstName());
-		await page.getByLabel('Last Name').fill(faker.name.lastName());
+		await page.getByLabel('First Name').fill(faker.person.firstName());
+		await page.getByLabel('Last Name').fill(faker.person.lastName());
 		await page.getByLabel('Display Name').fill(displayName);
 		await page.getByLabel('Bio').fill(faker.lorem.sentence());
 		await page.getByLabel('Date of birth').fill(generateRandomDob());
@@ -48,11 +48,11 @@ test.describe('User profile', () => {
 	});
 
 	test('user has a profile page', async ({ page }) => {
-		const displayName = faker.name.fullName();
+		const displayName = faker.person.fullName();
 		const email = generateRandomEmail(prefix);
 		await signUp({ page, email, password, prefix });
-		await page.getByLabel('First Name').fill(faker.name.firstName());
-		await page.getByLabel('Last Name').fill(faker.name.lastName());
+		await page.getByLabel('First Name').fill(faker.person.firstName());
+		await page.getByLabel('Last Name').fill(faker.person.lastName());
 		await page.getByLabel('Display Name').fill(displayName);
 		await page.getByLabel('Bio').fill(faker.lorem.sentence());
 		await page.getByLabel('Date of birth').fill(generateRandomDob());

@@ -19,9 +19,11 @@ export default function AppLayout({ children }: Props) {
             <Link className="btn btn-outline no-animation" href="/account">
               Account
             </Link>
-            <Link className="block" href="/auth/signout">
-              Sign out
-            </Link>
+            <form action="/api/auth/signout" method="post">
+              <button className="button block" type="submit">
+                Sign out
+              </button>
+            </form>
           </div>
         </div>
         <div className="grid place-items-center my-20 mx-2">{children}</div>

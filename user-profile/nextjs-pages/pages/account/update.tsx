@@ -13,7 +13,7 @@ import InputErrorMessage from "@/components/InputErrorMessage";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Alert from "@/components/Alert";
 import AppLayout from "@/components/AppLayout";
-import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { createPagesServerClient } from "@supabase/auth-helpers-nextjs";
 import { GetServerSidePropsContext } from "next";
 import { invalidateNextRouterCache } from "@/lib/invalidateNextRouterCache";
 import get from "just-safe-get";
@@ -231,7 +231,7 @@ export default function UpdateEmail({ user, profile }: UserInfo) {
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Supabase Client
-  const supabase = createServerSupabaseClient(ctx);
+  const supabase = createPagesServerClient(ctx);
 
   // get profile and profile_info
   const { profile, session } = await getProfile(supabase);

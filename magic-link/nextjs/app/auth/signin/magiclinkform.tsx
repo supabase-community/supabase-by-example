@@ -6,12 +6,12 @@ import { useState, FormEvent } from "react";
 import { z, ZodError } from "zod";
 import Alert from "@/components/Alert";
 import InputErrorMessage from "@/components/InputErrorMessage";
-import { useSupabase } from "@/app/supabase-provider";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 type FormData = z.infer<typeof AuthUserSchema>;
 
 export default function MagicLinkForm() {
-  const { supabase } = useSupabase();
+  const supabase = createClientComponentClient();
   const [errors, setErrors] = useState<FormData>();
   const [message, setMessage] = useState<string>("");
   const [formSuccess, setFormSuccess] = useState(false);
