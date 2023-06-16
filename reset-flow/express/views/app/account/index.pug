@@ -1,0 +1,11 @@
+extends ../layout
+
+block main
+  div(class='w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6')
+    h2(class="font-semibold text-4xl mb-4") Account
+    p.font-medium.mb-10 Hi #{user.email}, you can update your email or password from here
+    ul.divide-y-2.divide-gray-200
+      li(class='flex justify-between hover:bg-blue-600 hover:text-blue-200')
+        a(href='/account/update-email', class="block w-full p-3") Update email
+      li(class='flex justify-between hover:bg-blue-600 hover:text-blue-200')
+        a(href='/account/update-password', class="block w-full p-3") Update password
