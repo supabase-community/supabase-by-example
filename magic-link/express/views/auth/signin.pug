@@ -1,0 +1,18 @@
+extends layout
+
+include ../_partials
+
+block main
+  div(class='w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6')
+    if message
+      +alert(message)(class=`${success ? 'alert-info' : 'alert-error'} mb-10`)
+    h2(class='font-semibold text-4xl mb-4') Sign in
+    p(class='font-medium mb-4') Hi, Welcome back
+    form(method='post')
+      .form-control
+        label(class='label' for='email') Email
+        input(id='email' name='email' type='text' class='input input-bordered' value=`${email ? email : ''}`)
+      if errors
+        +input_error(errors.email)
+      .form-control.mt-6
+        button(class='btn btn-primary no-animation') Sign in
