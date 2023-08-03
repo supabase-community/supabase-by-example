@@ -1,0 +1,22 @@
+{
+  "name": "oauth-flow-nuxt",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/supabase": "^1.0.1",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "^18.17.1",
+    "daisyui": "^3.5.0",
+    "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
+}
