@@ -1,3 +1,7 @@
+<script>
+	import { enhance } from '$app/forms';
+</script>
+
 <main data-theme="winter">
 	<div class="flex flex-col h-screen">
 		<div class="navbar border-b border-gray-300 py-8 px-4">
@@ -8,7 +12,9 @@
 			</div>
 			<div class="flex-none space-x-10">
 				<a class="btn btn-outline" href="/account">Account</a>
-				<a class="block" href="/auth/signout">Sign out</a>
+				<form action="/auth/signout" method="post">
+					<button class="btn btn-ghost">Sign out</button>
+				</form>
 			</div>
 		</div>
 		<div class="grid place-items-center my-20 mx-2">

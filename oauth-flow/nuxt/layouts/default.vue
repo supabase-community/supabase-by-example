@@ -15,7 +15,7 @@ const handleSignOut = async () => {
             <div class="navbar border-b border-gray-300 py-8 px-4">
                 <div class="flex-1">
                     <h1 class="font-semibold">
-                        <NuxtLink to="/">Magic Link + Otp Flow</NuxtLink>
+                        <NuxtLink to="/">OAuth Flow</NuxtLink>
                     </h1>
                 </div>
                 <div class="flex-none space-x-10">
