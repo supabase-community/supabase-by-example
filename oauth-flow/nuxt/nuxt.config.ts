@@ -13,5 +13,9 @@ export default defineNuxtConfig({
       callback: "/auth/confirm",
       exclude: ["/auth/*"],
     },
+    cookieName: "oauth",
+    cookieOptions: {
+      secure: false, // TODO: Set to true when deploying to a hosted service, forced this to non-secure for Safari to work locally
+    },
   },
 });

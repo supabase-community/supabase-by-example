@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: 'Magic Link + Otp Flow'
+  title: 'OAuth Flow'
 })
 </script>
 
