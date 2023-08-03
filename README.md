@@ -10,6 +10,7 @@ These are example projects using supabase in various frameworks. This repo took 
 - react
 - express (Magic Link + Otp SignIn flow and Reset Password and Change Email flow)
 - react-auth-ui (only in Magic Link + Otp SignIn flow example at the moment)
+- nuxt (Reset Password and Change Email flow)
 
 ## Getting started
 
