@@ -775,11 +775,6 @@ html {
   border-radius: 0px;
 }
 
-.link {
-  cursor: pointer;
-  text-decoration-line: underline;
-}
-
 .navbar {
   display: flex;
   align-items: center;
@@ -1263,16 +1258,6 @@ html {
   --tw-placeholder-opacity: 0.2;
 }
 
-.link:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.link:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
-
 @keyframes progress-loading {
   50% {
     left: 107%;
@@ -1462,10 +1447,6 @@ html {
   flex: none;
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -1476,10 +1457,6 @@ html {
 
 .items-center {
   align-items: center;
-}
-
-.justify-end {
-  justify-content: flex-end;
 }
 
 .justify-between {
@@ -1591,12 +1568,12 @@ html {
   padding-bottom: 2rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-center {

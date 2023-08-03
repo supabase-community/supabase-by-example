@@ -22,10 +22,7 @@ export const actions: Actions = {
 
 		const { error } = await supabase.auth.signUp({
 			email,
-			password,
-			options: {
-				emailRedirectTo: `${url.origin}/auth/callback`
-			}
+			password
 		});
 
 		if (error) {

@@ -28,6 +28,7 @@
 		"postgres": "^3.3.5",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
+		"supabase": "^1.93.0",
 		"svelte": "^3.59.1",
 		"svelte-check": "^3.4.3",
 		"svelte-preprocess": "^5.0.4",
@@ -39,7 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"@supabase/auth-helpers-sveltekit": "^0.10.1",
-		"@supabase/supabase-js": "^2.25.0",
+		"@supabase/supabase-js": "^2.33.1",
 		"daisyui": "^2.51.5",
 		"zod": "^3.21.4"
 	}

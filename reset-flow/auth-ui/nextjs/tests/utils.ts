@@ -31,8 +31,8 @@ export async function signUp({ page, email, password, prefix }: Auth) {
   await page.keyboard.press("Tab");
   await page.getByLabel("Password").fill(password);
   await page.getByRole("button", { name: "Create account" }).click();
-  const successNotice = page.locator('div[class^="alert"]');
-  await expect(successNotice).toContainText("magic link");
+  const successNotice = page.locator('span[class^="supabase-auth-ui_ui-message"]');
+  await expect(successNotice).toContainText("confirmation link");
   await checkConfirmationEmail(page, prefix);
   const welcomeNotice = page.getByRole("heading", { name: `Welcome ${email}` });
   await expect(welcomeNotice).toHaveText(`Welcome ${email}`);
@@ -61,13 +61,7 @@ export async function forgotPassword({ page, email, prefix }: ForgotPassword) {
   await page.getByRole("link", { name: "Forgot Password?" }).click();
   await page.getByLabel("Email").fill(email);
   await page.keyboard.press("Enter");
-  const successNotice = page
-    .locator("div")
-    .filter({
-      hasText:
-        "Please check your email for a password reset link to log into the website.",
-    })
-    .first();
+  const successNotice = page.getByText("Check your email for the password reset link")
   await expect(successNotice).toHaveCount(1);
   await checkResetPasswordEmail(page, prefix);
   await page.waitForURL("/account/update-password");

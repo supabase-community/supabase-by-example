@@ -100,6 +100,19 @@ router.get("/callback", async function (req, res) {
   res.redirect(303, next);
 });
 
+router.get("/confirm", async function (req, res) {
+  const token_hash = req.query.token_hash;
+  const type = req.query.type;
+  const next = req.query.next ?? "/";
+
+  if (token_hash && type) {
+    const supabase = createClient({ req, res });
+    await supabase.auth.verifyOtp({ type, token_hash });
+  }
+
+  res.redirect(303, `/${next.slice(1)}`);
+});
+
 router.post("/signout", async function (req, res) {
   const supabase = createClient({ req, res });
 

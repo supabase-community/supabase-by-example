@@ -32,10 +32,10 @@ test.describe('Password reset flow', () => {
 		await forgotPassword({ page, email, prefix });
 		await page.getByLabel('Password', { exact: true }).fill(newPassword);
 		await page.getByLabel('Confirm Password').fill(newPassword);
-		await page.keyboard.press('Enter');
+		await page.getByRole('button', { name: 'Update password' }).click();
 		const successNotice = page.getByText('Your password was updated successfully.');
 		await expect(successNotice).toHaveCount(1);
-		await page.getByRole('link', { name: 'Sign out' }).click();
+		await page.getByRole('button', { name: 'Sign out' }).click();
 		await signIn({ page, email, password: newPassword });
 	});
 });

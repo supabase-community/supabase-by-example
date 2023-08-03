@@ -1,0 +1,8 @@
+<h2>Magic Link</h2>
+
+<p>Follow this link to login:</p>
+<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email">Log In</a></p>
+
+<p>or alternatively, visit the <a href="{{ .SiteURL }}/auth/verify-token">verify token</a> page and enter the token code: {{ .Token }}</p>
+
+<p>The link will remain valid for 24 hours or until it is used, whichever comes first. If you need to request another link, <a href="{{ .SiteURL }}/auth/sign-in">please click here</a>.</p>

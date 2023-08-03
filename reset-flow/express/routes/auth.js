@@ -65,10 +65,7 @@ router.post("/signup", async function (req, res, next) {
 
   const { error } = await supabase.auth.signUp({
     email,
-    password,
-    options: {
-      emailRedirectTo: `http://localhost:3000/auth/callback`,
-    },
+    password
   });
 
   if (error) {
@@ -107,9 +104,7 @@ router.post("/forgotpassword", async function (req, res, next) {
 
   const supabase = createClient({ req, res });
 
-  const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `http://localhost:3000/auth/callback?next=/account/update-password`,
-  });
+  const { error } = await supabase.auth.resetPasswordForEmail(email);
 
   if (error) {
     return res.render(
@@ -136,6 +131,19 @@ router.get("/callback", async function (req, res) {
   }
 
   res.redirect(303, next);
+});
+
+router.get("/confirm", async function (req, res) {
+  const token_hash = req.query.token_hash;
+  const type = req.query.type;
+  const next = req.query.next ?? "/";
+
+  if (token_hash && type) {
+    const supabase = createClient({ req, res });
+    await supabase.auth.verifyOtp({ type, token_hash });
+  }
+
+  res.redirect(303, `/${next.slice(1)}`);
 });
 
 router.post("/signout", async function (req, res) {

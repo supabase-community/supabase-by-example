@@ -14,7 +14,7 @@
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "0.7.2",
     "@supabase/auth-helpers-react": "0.4.0",
-    "@supabase/supabase-js": "^2.25.0",
+    "@supabase/supabase-js": "^2.33.1",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
@@ -35,6 +35,7 @@
     "@faker-js/faker": "^8.0.2",
     "@playwright/test": "^1.35.0",
     "@types/tcp-port-used": "^1.0.1",
+    "supabase": "^1.93.0",
     "tcp-port-used": "^1.0.2"
   }
 }

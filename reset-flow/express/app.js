@@ -48,6 +48,7 @@ async function hasSession(req, res, next) {
     "/auth/signup",
     "/auth/forgotpassword",
     "/auth/callback",
+    "/auth/confirm",
   ];
   if (nonSecurePaths.includes(req.path)) return next();
 

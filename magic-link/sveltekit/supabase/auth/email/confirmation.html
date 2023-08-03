@@ -1,0 +1,11 @@
+<h2>Sign up confirmation</h2>
+
+<p>Thank you for signing up! To complete the registration process and gain access to our platform, please click the link below to confirm your account:</p>
+
+<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email">Confirm your email address</a></p>
+
+<p>or alternatively, visit the <a href="{{ .SiteURL }}/auth/verify-token">verify token</a> page and enter the token code: {{ .Token }}</p>
+
+<p>This confirmation step is important to ensure that we have accurate and up-to-date information for all our users. Once you have confirmed your account, you will be logged in and you can start using our services.</p>
+
+<p>Thank you for choosing our platform. We look forward to serving you.</p>

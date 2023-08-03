@@ -44,10 +44,7 @@ export default function SignUp() {
     }
     const { error } = await supabase.auth.signUp({
       email,
-      password,
-      options: {
-        emailRedirectTo: `${new URL(location.href).origin}/api/auth/callback`,
-      },
+      password
     });
 
     if (error) {
