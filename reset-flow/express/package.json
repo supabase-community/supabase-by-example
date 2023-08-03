@@ -22,7 +22,7 @@
     "express-session": "^1.17.3",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {
