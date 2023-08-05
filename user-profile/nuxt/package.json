@@ -1,0 +1,28 @@
+{
+  "name": "user-profile-nuxt",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/supabase": "^1.0.1",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@playwright/test": "^1.36.2",
+    "@types/node": "^18.17.1",
+    "@types/tcp-port-used": "^1.0.1",
+    "daisyui": "^3.5.0",
+    "nuxt": "^3.6.5",
+    "tcp-port-used": "^1.0.2"
+  },
+  "dependencies": {
+    "just-safe-get": "^4.2.0",
+    "zod": "^3.21.4"
+  }
+}
