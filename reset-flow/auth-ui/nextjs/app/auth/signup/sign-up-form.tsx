@@ -7,9 +7,6 @@ import { useState } from "react";
 
 export default function SignUpForm() {
   const supabase = createClientComponentClient();
-  const [redirectTo] = useState(
-    `${new URL(location.href).origin}/auth/callback`
-  );
 
   return (
     <div className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6">
@@ -18,10 +15,11 @@ export default function SignUpForm() {
       <SignUp
         supabaseClient={supabase}
         appearance={classAppearance}
-        redirectTo={redirectTo}
         localization={{
           variables: {
             sign_up: {
+              email_label: "Email",
+              password_label: "Password",
               button_label: "Create account",
             },
           },

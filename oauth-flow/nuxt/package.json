@@ -14,7 +14,8 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.17.1",
     "daisyui": "^3.5.0",
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.6.5",
+    "supabase": "^1.93.0"
   },
   "dependencies": {
     "zod": "^3.21.4"

@@ -1,7 +1,6 @@
 "use client";
 import { formatError } from "@/lib/utils";
 import { AuthUserSchema } from "@/lib/validationSchema";
-import { AuthApiError } from "@supabase/supabase-js";
 import { useState, FormEvent } from "react";
 import { z, ZodError } from "zod";
 import Alert from "@/components/Alert";
@@ -45,16 +44,9 @@ export default function SignUpForm() {
     const { error } = await supabase.auth.signUp({
       email,
       password,
-      options: {
-        emailRedirectTo: `${new URL(location.href).origin}/auth/callback`,
-      },
     });
 
     if (error) {
-      if (error instanceof AuthApiError && error.status === 400) {
-        setMessage("Invalid credentials.");
-        return;
-      }
       setMessage(error.message);
       return;
     }

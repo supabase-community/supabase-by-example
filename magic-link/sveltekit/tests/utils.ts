@@ -68,7 +68,9 @@ async function checkConfirmationEmail(page: Page, prefix = 'test') {
 async function checkConfirmationCodeEmail(page: Page, prefix = 'test') {
 	await page.goto(`http://localhost:54324/m/${prefix}`);
 	await page.locator('.message-list > :first-child').click();
-	const code = await page.getByText('Alternatively, enter the code').textContent();
+	const code = await page
+    	.getByText("or alternatively, visit the verify token page and enter the token code")
+    	.textContent();
 	const token = code?.split(':').pop()?.trim();
 	return token;
 }

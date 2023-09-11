@@ -31,8 +31,10 @@ export async function signUp({ page, email, password, prefix }: Auth) {
   await page.keyboard.press("Tab");
   await page.getByLabel("Password").fill(password);
   await page.getByRole("button", { name: "Create account" }).click();
-  const successNotice = page.locator('div[class^="alert"]');
-  await expect(successNotice).toContainText("magic link");
+  const successNotice = page.getByText(
+    "Please check your email for a magic link to log into the website."
+  );
+  await expect(successNotice).toHaveCount(1);
   await checkConfirmationEmail(page, prefix);
   const welcomeNotice = page.getByRole("heading", { name: `Welcome ${email}` });
   await expect(welcomeNotice).toHaveText(`Welcome ${email}`);

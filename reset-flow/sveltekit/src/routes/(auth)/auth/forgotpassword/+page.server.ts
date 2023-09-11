@@ -18,9 +18,7 @@ export const actions: Actions = {
 			}
 		}
 
-		const { error } = await supabase.auth.resetPasswordForEmail(email, {
-			redirectTo: `${url.origin}/auth/callback?next=/account/update-password`
-		});
+		const { error } = await supabase.auth.resetPasswordForEmail(email);
 
 		if (error) {
 			return fail(500, fault('Server error. Try again later.', { email }));
