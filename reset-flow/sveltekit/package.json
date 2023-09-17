@@ -47,5 +47,8 @@
 		"@supabase/supabase-js": "^2.33.1",
 		"daisyui": "^2.51.6",
 		"zod": "^3.21.4"
-	}
+	},
+	"trustedDependencies": [
+		"supabase"
+	]
 }

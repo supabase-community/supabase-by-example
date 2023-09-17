@@ -19,5 +19,8 @@
   },
   "dependencies": {
     "zod": "^3.21.4"
-  }
+  },
+	"trustedDependencies": [
+		"supabase"
+	]
 }
