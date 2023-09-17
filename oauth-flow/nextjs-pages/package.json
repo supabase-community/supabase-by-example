@@ -31,5 +31,8 @@
   },
   "devDependencies": {
     "supabase": "^1.93.0"
-  }
+  },
+	"trustedDependencies": [
+		"supabase"
+	]
 }

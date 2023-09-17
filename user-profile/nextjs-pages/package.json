@@ -37,5 +37,8 @@
     "@types/tcp-port-used": "^1.0.1",
     "supabase": "^1.93.0",
     "tcp-port-used": "^1.0.2"
-  }
+  },
+	"trustedDependencies": [
+		"supabase"
+	]
 }

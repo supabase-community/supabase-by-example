@@ -50,5 +50,8 @@
 		"daisyui": "^2.51.5",
 		"just-safe-get": "^4.2.0",
 		"zod": "^3.21.4"
-	}
+	},
+	"trustedDependencies": [
+		"supabase"
+	]
 }
