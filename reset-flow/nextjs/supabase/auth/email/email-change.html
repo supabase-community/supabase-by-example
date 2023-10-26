@@ -1,8 +1,11 @@
 <h2>Confirm Change of Email</h2>
 
-<p>
-  Follow this link to confirm the update of your email from {{ .Email }} to {{ .NewEmail }}:
-</p>
-<p><a href="{{ .ConfirmationURL }}">Change Email</a></p>
+{{ if eq .Email .SendingTo }}
+  <p>We are writing to confirm you initiated an email change from {{ .Email }} to {{ .NewEmail }}</p>
+  <p><a href="{{ .SiteURL }}/auth/email-change/confirm?token={{ .TokenHash }}">Change Email</a></p>
+{{ else }}
+  <p>Please confirm your email address ({{ .NewEmail }}) for this account.</p>
+  <p><a href="{{ .SiteURL }}/auth/email-change/confirm?token={{ .TokenHash }}">Confirm Email Address</a></p>
+{{end}}
 
 <p>Or use the token {{ .Token }}</p>
