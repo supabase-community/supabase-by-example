@@ -16,7 +16,7 @@
 			<h3 class="text-lg font-semibold mt-2">Bio</h3>
 			<p>{data.profile?.bio}</p>
 			<p class="text-right">
-				<a href="{data.website}/{data.profile?.slug}" class="btn btn-md btn-outline">View Profile</a
+				<a href="{data.website}/u/{data.profile?.slug}" class="btn btn-md btn-outline">View Profile</a
 				>
 			</p>
 		{/if}
