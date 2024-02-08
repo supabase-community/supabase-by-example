@@ -1,3 +1,6 @@
+# NOTE: This project is outdated and has been archived!
+<hr />
+
 # Supabase by example
 
 These are example projects using supabase in various frameworks. This repo took inspiration from [Solid Templates](https://github.com/solidjs/templates).
